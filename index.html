@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BootFit. Know exactly what size football boots to buy.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #ffd400;
+    --bg: #0d0d0d;
+    --line: #232323;
+    --text: #f4f4f4;
+    --muted: #9a9a9a;
+    --faint: #5f5f5f;
+    --amber: #f3c96b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'Inter', -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  .cond { font-family: 'Oswald', 'Bahnschrift SemiCondensed', 'Arial Narrow', Impact, sans-serif; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+  a { color: inherit; }
+  section { position: relative; }
+  .rule { border: none; border-top: 1px solid var(--line); }
+
+  .label {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 12px;
+    letter-spacing: 4px; text-transform: uppercase; color: var(--yellow);
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1140px; margin: 0 auto; padding: 24px 28px;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-mark {
+    width: 36px; height: 36px; background: var(--yellow); color: #0d0d0d;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Oswald', Impact, sans-serif; font-weight: 700; font-size: 16px;
+    clip-path: polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%);
+  }
+  .logo-word { font-family: 'Oswald', Impact, sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 3px; text-transform: uppercase; }
+  .nav-links { display: flex; align-items: center; gap: 34px; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none; font-size: 12.5px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 2px; font-family: 'Oswald', sans-serif;
+    transition: color .15s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a.hot { color: var(--yellow); }
+
+  /* ============ HERO ============ */
+  .hero { padding: 72px 0 100px; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 70px; align-items: start; }
+  h1 {
+    font-family: 'Oswald', 'Bahnschrift SemiCondensed', 'Arial Narrow', Impact, sans-serif;
+    font-weight: 700; text-transform: uppercase;
+    font-size: clamp(46px, 6vw, 82px); line-height: .97; letter-spacing: .5px;
+    margin-top: 20px;
+  }
+  h1 em { font-style: normal; color: var(--yellow); }
+  .hero .sub { color: var(--muted); font-size: 16px; line-height: 1.75; max-width: 440px; margin: 30px 0 40px; }
+  .hero .sub b { color: var(--text); font-weight: 600; }
+  .ctas { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+  .btn-y {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--yellow); color: #0d0d0d; text-decoration: none;
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 15px;
+    text-transform: uppercase; letter-spacing: 2.5px; padding: 17px 32px;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%);
+    transition: transform .12s;
+  }
+  .btn-y:hover { transform: translateY(-2px); }
+  .link-plain {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14px;
+    text-transform: uppercase; letter-spacing: 2.5px; color: var(--text);
+    text-decoration: none; border-bottom: 2px solid var(--yellow); padding-bottom: 4px;
+  }
+  .link-plain:hover { color: var(--yellow); }
+
+  /* hero visual: yellow circle, boot, halftone, floating card */
+  .visual { position: relative; min-height: 520px; }
+  .halftone {
+    position: absolute; width: 240px; height: 240px; right: -10px; top: -18px;
+    background-image: radial-gradient(circle, #2e2e2e 1.6px, transparent 1.8px);
+    background-size: 13px 13px;
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+  }
+  .circle {
+    position: absolute; width: 400px; height: 400px; border-radius: 50%;
+    background: var(--yellow); right: 40px; top: 60px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .circle svg { width: 330px; transform: rotate(-14deg); filter: drop-shadow(0 18px 24px rgba(0,0,0,.45)); }
+  .slashes {
+    position: absolute; left: 10px; top: 26px;
+    color: var(--yellow); font-family: 'Oswald', sans-serif; font-weight: 700;
+    font-size: 42px; letter-spacing: -4px; opacity: .9; user-select: none;
+  }
+  .vert {
+    position: absolute; right: -14px; bottom: 20px;
+    writing-mode: vertical-rl; color: #3c3c3c; font-family: 'Oswald', sans-serif;
+    font-size: 12px; letter-spacing: 5px; text-transform: uppercase;
+  }
+  .stripe {
+    position: absolute; width: 150px; height: 12px; background: var(--yellow);
+    transform: rotate(-45deg); right: 8px; bottom: 130px; opacity: .95;
+  }
+  .stripe::after {
+    content: ""; position: absolute; top: 22px; left: 26px;
+    width: 90px; height: 12px; background: #2b2b2b;
+  }
+  .float-card {
+    position: absolute; left: 26px; bottom: -26px; z-index: 3;
+    width: 250px; background: #161616; border: 1px solid #2c2c2c;
+    padding: 20px 22px 18px;
+    box-shadow: 0 24px 50px rgba(0,0,0,.55);
+    animation: floaty 4.5s ease-in-out infinite;
+  }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+  .float-card::before {
+    content: ""; position: absolute; top: 0; left: 0; width: 46px; height: 4px; background: var(--yellow);
+  }
+  .fc-model { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .fc-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-top: 12px; }
+  .fc-size { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 52px; line-height: 1; color: var(--yellow); margin-top: 4px; }
+  .fc-conf { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 12.5px; color: var(--amber); font-weight: 600; }
+  .fc-conf .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+
+  /* interactive selects, pure typography (used in showcase) */
+  .demo select {
+    display: block; width: 100%; margin-top: 8px;
+    background: transparent; border: none; border-bottom: 1px solid var(--line);
+    color: var(--text); padding: 8px 2px 12px;
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px;
+    letter-spacing: .5px; text-transform: uppercase; appearance: none; cursor: pointer;
+  }
+  .demo select:focus { outline: none; border-bottom-color: var(--yellow); }
+  .demo select option { background: #161616; font-size: 16px; }
+  .demo-conf { display: flex; align-items: center; gap: 9px; margin-top: 12px; font-size: 13.5px; font-weight: 600; }
+  .demo-conf .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .demo-conf.High { color: #b7f36b; } .demo-conf.High .dot { background: #b7f36b; }
+  .demo-conf.Moderate { color: var(--amber); } .demo-conf.Moderate .dot { background: var(--amber); }
+  .demo-conf.Low { color: #f3846b; } .demo-conf.Low .dot { background: #f3846b; }
+  .demo-note { margin-top: 22px; color: var(--faint); font-size: 11.5px; letter-spacing: .3px; }
+
+  /* ============ TRUST STRIP ============ */
+  .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .trust .wrap {
+    display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+    padding-top: 22px; padding-bottom: 22px;
+  }
+  .trust span {
+    font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 12.5px;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted);
+  }
+
+  /* ============ HOW IT WORKS ============ */
+  .how { padding: 110px 0 90px; }
+  .how-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 56px; margin-top: 64px; }
+  .how-num {
+    font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 88px; line-height: 1;
+    color: transparent; -webkit-text-stroke: 1.5px var(--yellow);
+  }
+  .how-t { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 21px; text-transform: uppercase; letter-spacing: 1px; margin: 20px 0 10px; }
+  .how-d { color: var(--muted); font-size: 14.5px; line-height: 1.7; max-width: 280px; }
+
+  /* ============ SHOWCASE ============ */
+  .show { padding: 100px 0 110px; border-top: 1px solid var(--line); }
+  .show-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; margin-top: 60px; align-items: start; }
+  .show-flow .slab { margin-bottom: 30px; }
+  .show-flow .k { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--faint); }
+  .show-flow .v { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 26px; text-transform: uppercase; letter-spacing: .5px; margin-top: 6px; }
+  .show-flow .v small { color: var(--muted); font-size: 16px; margin-left: 10px; letter-spacing: 1px; }
+  .show-flow .down { color: var(--faint); font-size: 20px; margin: -6px 0 24px; }
+  .show-rec {
+    font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 92px; line-height: 1; color: var(--yellow);
+  }
+  .show-because { color: var(--muted); font-size: 15px; line-height: 1.85; max-width: 420px; }
+  .show-because .li { display: flex; gap: 12px; margin-bottom: 4px; }
+  .show-because .li b { color: var(--yellow); font-weight: 700; }
+  .show-lede {
+    font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 400px; margin-top: 24px;
+  }
+  .show-lede b { color: var(--text); }
+  h2 {
+    font-family: 'Oswald', 'Arial Narrow', Impact, sans-serif; font-weight: 700;
+    text-transform: uppercase; font-size: clamp(34px, 4vw, 54px); line-height: 1.02;
+  }
+  h2 em { font-style: normal; color: var(--yellow); }
+
+  /* ============ WHY ============ */
+  .why { padding: 100px 0; border-top: 1px solid var(--line); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 60px; }
+  .why-col .head {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14px;
+    letter-spacing: 4px; text-transform: uppercase; margin-bottom: 28px;
+  }
+  .why-col.others .head { color: var(--faint); }
+  .why-col.bootfit .head { color: var(--yellow); }
+  .why-li { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 16.5px; }
+  .why-li:last-child { border-bottom: none; }
+  .why-col.others .why-li { color: var(--faint); }
+  .why-col.others .why-li i { font-style: normal; color: #6c4a44; font-weight: 700; }
+  .why-col.bootfit .why-li { color: var(--text); font-weight: 500; }
+  .why-col.bootfit .why-li i { font-style: normal; color: var(--yellow); font-weight: 700; }
+
+  /* ============ COMMUNITY ============ */
+  .community { padding: 110px 0; border-top: 1px solid var(--line); text-align: center; }
+  .community .statement {
+    font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase;
+    font-size: clamp(26px, 3.4vw, 44px); line-height: 1.25; max-width: 860px; margin: 0 auto;
+  }
+  .community .statement em { font-style: normal; color: var(--yellow); }
+  .community .stats { margin-top: 56px; display: flex; justify-content: center; gap: 90px; flex-wrap: wrap; }
+  .stat .n { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 54px; color: var(--text); line-height: 1; }
+  .stat .n.y { color: var(--yellow); }
+  .stat .t { color: var(--muted); font-size: 12.5px; letter-spacing: 2.5px; text-transform: uppercase; margin-top: 10px; font-family: 'Oswald', sans-serif; }
+  .community .invite { margin-top: 46px; color: var(--muted); font-size: 15px; }
+
+  /* ============ BRANDS ============ */
+  .brands-line { border-top: 1px solid var(--line); }
+  .brands-line .wrap {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+    padding-top: 34px; padding-bottom: 34px;
+  }
+  .brands-line span {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--faint);
+    transition: color .2s;
+  }
+  .brands-line span:hover { color: var(--text); }
+
+  /* ============ FAQ ============ */
+  .faq { padding: 100px 0; border-top: 1px solid var(--line); }
+  .faq-list { margin-top: 50px; max-width: 780px; }
+  details { border-bottom: 1px solid var(--line); }
+  summary {
+    cursor: pointer; list-style: none; padding: 22px 0;
+    font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 19px;
+    letter-spacing: .5px; display: flex; justify-content: space-between; align-items: center;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--yellow); font-size: 24px; font-weight: 400; }
+  details[open] summary::after { content: "-"; }
+  details p { color: var(--muted); font-size: 15px; line-height: 1.75; padding: 0 0 24px; max-width: 640px; }
+
+  /* ============ FINAL CTA ============ */
+  .final { padding: 130px 0 120px; border-top: 1px solid var(--line); text-align: center; }
+  .final h2 { font-size: clamp(44px, 7vw, 96px); }
+  .final .btn-y { margin-top: 46px; font-size: 17px; padding: 20px 44px; }
+
+  footer { border-top: 1px solid var(--line); }
+  footer .wrap {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    padding-top: 30px; padding-bottom: 30px;
+  }
+  footer a { color: var(--faint); text-decoration: none; font-size: 13px; margin-left: 26px; }
+  footer a:first-child { margin-left: 0; }
+  footer a:hover { color: var(--text); }
+  footer .fine { color: var(--faint); font-size: 12.5px; }
+
+  @media (max-width: 900px) {
+    .hero-grid, .show-grid, .why-grid { grid-template-columns: 1fr; gap: 56px; }
+    .how-row { grid-template-columns: 1fr; gap: 48px; }
+    .trust .wrap { justify-content: flex-start; }
+    .community .stats { gap: 50px; }
+  }
+
+
+  :root {
+    --bg: #0d0d0d;
+    --bg2: #141414;
+    --card: #141414;
+    --card2: #1d1d1d;
+    --line: #262626;
+    --text: #f4f4f4;
+    --muted: #9a9a9a;
+    --faint: #5f5f5f;
+    --accent: #ffd400;
+    --accent-ink: #0d0d0d;
+    --sel-bg: #201b02;
+    --sel-line: #57490d;
+    --green: #b7f36b;
+    --amber: #f3c96b;
+    --red: #f3846b;
+    --blue: #6bc6f3;
+    --radius: 2px;
+    font-size: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  h1, h2, .btn, nav button, .big-size, .fc-size, .step-num, .logo {
+    font-family: 'Oswald', 'Bahnschrift SemiCondensed', 'Arial Narrow', Impact, sans-serif;
+  }
+  .appwrap { max-width: 720px; margin: 0 auto; padding: 0 18px 90px; }
+
+
+
+  .step {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 20px; margin-bottom: 16px;
+  }
+  .step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 2px; background: var(--card2);
+    color: var(--accent); font-size: 12px; font-weight: 700; margin-right: 8px;
+    border: 1px solid var(--line); vertical-align: 1px;
+  }
+  .step h2 { font-size: 16px; margin-bottom: 4px; letter-spacing: -0.2px; }
+  .step .hint { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    padding: 8px 14px; border-radius: 2px; border: 1px solid var(--line);
+    background: var(--bg2); color: var(--muted); font-size: 13.5px; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .12s;
+  }
+  .chip:hover { border-color: var(--faint); color: var(--text); }
+  .chip.sel { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+  .boot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  @media (max-width: 540px) { .boot-grid { grid-template-columns: 1fr; } }
+  .boot-card {
+    text-align: left; padding: 13px 14px; border-radius: 2px;
+    border: 1px solid var(--line); background: var(--bg2); cursor: pointer;
+    font-family: inherit; color: var(--text); transition: all .12s;
+  }
+  .boot-card:hover { border-color: var(--faint); }
+  .boot-card.sel { border-color: var(--accent); background: var(--sel-bg); box-shadow: 0 0 0 1px var(--accent); }
+  .boot-card .bname { font-size: 14px; font-weight: 700; letter-spacing: -0.2px; }
+  .boot-card .bmeta { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
+  .tag {
+    font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px;
+    padding: 2.5px 8px; border-radius: 2px; background: var(--card2); color: var(--muted);
+    border: 1px solid var(--line);
+  }
+  .tag.speed { color: var(--blue); }
+  .tag.control { color: var(--amber); }
+  .tag.touch { color: var(--accent); }
+  .tag.narrow { color: var(--red); }
+  .tag.wide { color: var(--blue); }
+
+  .seg { display: grid; gap: 8px; }
+  .seg button {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 11px 14px; border-radius: 2px; border: 1px solid var(--line);
+    background: var(--bg2); color: var(--text); font-size: 14px; font-weight: 600;
+    cursor: pointer; font-family: inherit; text-align: left; transition: all .12s;
+  }
+  .seg button small { color: var(--faint); font-weight: 500; font-size: 12px; }
+  .seg button:hover { border-color: var(--faint); }
+  .seg button.sel { border-color: var(--accent); background: var(--sel-bg); }
+  .seg button.sel small { color: var(--muted); }
+
+  select, input[type=number] {
+    width: 100%; padding: 12px 14px; border-radius: 2px;
+    border: 1px solid var(--line); background: var(--bg2); color: var(--text);
+    font-size: 15px; font-family: inherit; appearance: none;
+  }
+  select:focus, input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .size-echo { color: var(--muted); font-size: 12.5px; margin-top: 8px; }
+
+  .btn {
+    display: block; width: 100%; padding: 15px; border-radius: 2px;
+    border: none; background: var(--accent); color: var(--accent-ink);
+    font-size: 16px; font-weight: 800; cursor: pointer; font-family: inherit;
+    letter-spacing: -0.2px; transition: transform .1s, opacity .15s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:disabled { opacity: .35; cursor: not-allowed; transform: none; }
+  .btn.ghost { background: var(--card2); color: var(--text); border: 1px solid var(--line); font-weight: 600; font-size: 14px; padding: 11px; }
+
+  /* Result */
+  .result {
+    border-radius: var(--radius); overflow: hidden; margin-bottom: 16px;
+    border: 1px solid var(--line); background: var(--card);
+  }
+  .result-hero {
+    padding: 26px 22px 20px;
+    background: linear-gradient(160deg, #221d02 0%, var(--card) 70%);
+    border-bottom: 1px solid var(--line);
+  }
+  .result-hero .kicker { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 700; }
+  .big-size { font-size: 46px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin: 4px 0 2px; }
+  .big-size span { color: var(--accent); }
+  .size-alts { color: var(--muted); font-size: 13.5px; }
+  .conf {
+    display: inline-flex; align-items: center; gap: 7px; margin-top: 14px;
+    padding: 6px 12px; border-radius: 2px; font-size: 13px; font-weight: 700;
+    border: 1px solid;
+  }
+  .conf .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .conf.High { color: var(--accent); border-color: var(--sel-line); background: #201b02; }
+  .conf.High .dot { background: var(--accent); }
+  .conf.Moderate { color: var(--amber); border-color: #55461f; background: #241d0c; }
+  .conf.Moderate .dot { background: var(--amber); }
+  .conf.Low { color: var(--red); border-color: #58301f; background: #24120c; }
+  .conf.Low .dot { background: var(--red); }
+
+  .conf-meter { margin-top: 10px; max-width: 320px; }
+  .conf-track { height: 8px; border-radius: 99px; background: var(--card2); border: 1px solid var(--line); overflow: hidden; }
+  .conf-fill { height: 100%; border-radius: 99px; transition: width .5s ease; }
+  .conf-fill.High { background: var(--accent); }
+  .conf-fill.Moderate { background: var(--amber); }
+  .conf-fill.Low { background: var(--red); }
+  .conf-pct { font-size: 12px; color: var(--muted); margin-top: 5px; }
+  .linklike { background: none; border: none; color: var(--blue); font-size: 12px; cursor: pointer; font-family: inherit; padding: 0; text-decoration: underline; }
+
+  .ev { list-style: none; }
+  .ev li { display: flex; gap: 9px; padding: 5px 0; font-size: 13.5px; color: var(--muted); }
+  .ev li::before { content: "✓"; color: var(--accent); font-weight: 800; flex: none; }
+  .ev li.pending::before { content: "○"; color: var(--faint); }
+
+  .bullets { list-style: none; }
+  .bullets li { display: flex; gap: 9px; padding: 5px 0; font-size: 14.5px; }
+  .bullets li::before { content: "✓"; color: var(--accent); font-weight: 800; flex: none; margin-top: 1px; }
+
+  .tradeoff { margin-top: 10px; border: 1px solid var(--line); border-radius: 2px; background: var(--bg2); padding: 14px 16px; }
+  .tradeoff h4 { font-size: 14px; margin-bottom: 10px; }
+  .tradeoff h4 b { color: var(--blue); }
+  .tcols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 480px) { .tcols { grid-template-columns: 1fr; } }
+  .tcols .th { font-size: 11px; text-transform: uppercase; letter-spacing: .7px; font-weight: 800; margin-bottom: 5px; }
+  .tcols .pro .th { color: var(--accent); }
+  .tcols .con .th { color: var(--red); }
+  .tcols div p { font-size: 13px; color: var(--muted); padding: 2px 0; }
+
+  .conservative {
+    margin: 14px 0 0; padding: 13px 15px; border-radius: 2px;
+    background: #241d0c; border: 1px solid #55461f; font-size: 13.5px; color: var(--text);
+  }
+  .conservative b { color: var(--amber); }
+
+  .tapgrid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .tap {
+    display: flex; align-items: center; gap: 12px; padding: 12px 15px;
+    border-radius: 2px; border: 1px solid var(--line); background: var(--bg2);
+    color: var(--text); font-size: 14.5px; font-weight: 600; cursor: pointer;
+    font-family: inherit; transition: all .12s; text-align: left;
+  }
+  .tap:hover { border-color: var(--faint); }
+  .tap.sel { border-color: var(--accent); background: var(--sel-bg); }
+  .tap .emo { font-size: 20px; flex: none; }
+
+  /* Foot Profile mode */
+  .engine-note { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+  .engine-note small { color: var(--faint); font-size: 12px; }
+  .stars { letter-spacing: 2px; color: var(--faint); }
+  .stars b { color: var(--amber); font-weight: 400; }
+  .req { font-size: 10px; text-transform: uppercase; letter-spacing: .6px; color: var(--accent); background: #201b02; border: 1px solid var(--sel-line); padding: 2px 7px; border-radius: 2px; vertical-align: 2px; margin-left: 6px; font-weight: 700; }
+  .measure-illus { width: 100%; max-width: 320px; display: block; margin: 4px 0 12px; border: 1px solid var(--line); border-radius: 2px; background: var(--bg2); }
+  .unit-row { display: grid; grid-template-columns: 1fr 110px; gap: 8px; }
+  .expq { margin-bottom: 16px; }
+  .expq:last-child { margin-bottom: 0; }
+  .expq p { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  .pcard {
+    border-radius: var(--radius); border: 1px solid var(--sel-line); overflow: hidden;
+    background: linear-gradient(160deg, #201b02 0%, var(--card) 60%); margin-bottom: 16px;
+  }
+  .pcard-head { padding: 18px 20px 6px; }
+  .pcard-head .kicker { font-size: 11.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 800; }
+  .pcard-body { padding: 6px 20px 18px; }
+  .pstat { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .pstat:last-child { border-bottom: none; }
+  .pstat .k { color: var(--muted); font-size: 13px; }
+  .pstat .v { font-weight: 700; font-size: 15px; text-align: right; max-width: 62%; }
+  .pstat .v.small { font-size: 13px; font-weight: 600; color: var(--text); }
+  .engine-badge {
+    display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .6px; color: var(--muted);
+    border: 1px solid var(--line); background: var(--bg2); border-radius: 2px; padding: 3px 8px;
+  }
+
+  .result-body { padding: 20px 22px; }
+  .result-body h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .8px; color: var(--faint); margin: 18px 0 8px; }
+  .result-body h3:first-child { margin-top: 0; }
+  .why { color: var(--text); font-size: 14.5px; }
+  .fitrow { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .fitrow:last-of-type { border-bottom: none; }
+  .fitrow .k { color: var(--muted); }
+  .fitrow .v { font-weight: 600; text-align: right; max-width: 60%; }
+  .warn { display: flex; gap: 9px; padding: 8px 0; font-size: 13.5px; color: var(--muted); }
+  .warn::before { content: "!"; flex: none; width: 18px; height: 18px; border-radius: 2px; background: #241d0c; color: var(--amber); font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .warn.hard::before { background: #24120c; color: var(--red); }
+  .altbox {
+    margin-top: 10px; padding: 13px 15px; border-radius: 2px;
+    background: var(--bg2); border: 1px solid var(--line); font-size: 13.5px; color: var(--muted);
+  }
+  .altbox b { color: var(--text); }
+  .srcs { font-size: 12.5px; color: var(--faint); }
+  .srcs a { color: var(--blue); text-decoration: none; }
+  .srcs a:hover { text-decoration: underline; }
+  .mismatch {
+    margin: 14px 0 0; padding: 14px 16px; border-radius: 2px;
+    background: #24120c; border: 1px solid #58301f; font-size: 14px;
+  }
+  .mismatch b { color: var(--red); }
+
+  /* Compare table */
+  .cmp-scroll { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); }
+  table { width: 100%; border-collapse: collapse; background: var(--card); font-size: 13.5px; min-width: 480px; }
+  th, td { padding: 11px 13px; text-align: left; border-bottom: 1px solid var(--line); }
+  th { font-size: 11.5px; text-transform: uppercase; letter-spacing: .6px; color: var(--faint); background: var(--bg2); }
+  td:first-child { color: var(--muted); font-size: 12.5px; }
+  td b.sz { font-size: 16px; }
+
+  /* profile */
+  .profile-stat { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .profile-stat:last-child { border-bottom: none; }
+  .profile-stat .k { color: var(--muted); }
+  .profile-stat .v { font-weight: 700; }
+
+  .note { font-size: 12.5px; color: var(--faint); margin-top: 10px; line-height: 1.5; }
+  .empty { text-align: center; color: var(--faint); padding: 40px 20px; font-size: 14px; }
+
+  /* data tab */
+  .databoot { background: var(--card); border: 1px solid var(--line); border-radius: 2px; padding: 16px 18px; margin-bottom: 12px; }
+  .databoot .bname { font-weight: 700; font-size: 15px; }
+  .databoot .traits { color: var(--muted); font-size: 13px; margin: 8px 0; }
+  .databoot .traits b { color: var(--text); font-weight: 600; }
+
+  .ref-pill {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--bg2); border: 1px solid var(--line); border-radius: 2px;
+    padding: 10px 14px; margin-bottom: 8px; font-size: 13.5px;
+  }
+  .ref-pill .x { background: none; border: none; color: var(--faint); cursor: pointer; font-size: 16px; font-family: inherit; padding: 2px 6px; }
+  .ref-pill .x:hover { color: var(--red); }
+
+  .toggle2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+  .hidden { display: none !important; }
+  .fade-in { animation: fi .25s ease; }
+  @keyframes fi { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+
+  /* unified nav */
+  #topnav {
+    position: sticky; top: 0; z-index: 200;
+    background: rgba(13,13,13,.93); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    max-width: none; padding: 18px 28px;
+  }
+  #topnav .nav-links a.active { color: #ffd400; }
+  .appwrap { padding-top: 28px; }
+  #tab-home footer { border-top: 1px solid #232323; }
+</style>
+</head>
+<body>
+<nav id="topnav">
+  <a class="logo" href="#" onclick="showTab('home');return false">
+    <span class="logo-mark">BF</span>
+    <span class="logo-word">BootFit</span>
+  </a>
+  <div class="nav-links">
+    <a href="#" data-tab="home" class="active" onclick="showTab('home');return false">Home</a>
+    <a href="#" data-tab="finder" onclick="showTab('finder');return false">Find Size</a>
+    <a href="#" data-tab="compare" onclick="showTab('compare');return false">Compare</a>
+    <a href="#" data-tab="profile" onclick="showTab('profile');return false">My Boots</a>
+    <a href="#" data-tab="data" onclick="showTab('data');return false">Data</a>
+  </div>
+</nav>
+
+<div id="tab-home">
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="label">Football Boot Sizing</div>
+      <h1>Know exactly<br>what size<br><em>to buy.</em></h1>
+      <p class="sub">Tell us what boots fit you today. <b>BootFit</b> recommends the right size in your next pair using official sizing, expert reviews, and community fit data.</p>
+      <div class="ctas">
+        <a class="btn-y" href="#" onclick="showTab('finder');return false">Find My Size</a>
+        <a class="link-plain" href="#" onclick="showTab('compare');return false">Compare Boots</a>
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="halftone"></div>
+      <div class="circle">
+        <!-- original stylized boot silhouette -->
+        <svg viewBox="0 0 340 190" aria-hidden="true">
+          <path d="M28 132
+                   C 30 108 44 88 66 76
+                   C 92 62 116 58 138 44
+                   C 152 35 162 26 176 24
+                   C 186 22 192 28 200 38
+                   C 214 56 236 78 262 92
+                   C 286 105 308 112 318 122
+                   C 326 130 326 140 320 144
+                   L 36 144 C 30 142 27 138 28 132 Z"
+                fill="#101010"/>
+          <path d="M154 40 L 170 62 M166 34 L 184 56 M178 29 L 197 51"
+                stroke="#3a3a3a" stroke-width="4" stroke-linecap="round"/>
+          <path d="M200 38 C 214 56 236 78 262 92" stroke="#2c2c2c" stroke-width="5" fill="none"/>
+          <path d="M66 76 C 92 62 116 58 138 44" stroke="#2c2c2c" stroke-width="4" fill="none"/>
+          <rect x="44" y="144" width="16" height="22" fill="#101010"/>
+          <rect x="92" y="144" width="16" height="24" fill="#101010"/>
+          <rect x="150" y="144" width="16" height="24" fill="#101010"/>
+          <rect x="212" y="144" width="16" height="24" fill="#101010"/>
+          <rect x="270" y="144" width="16" height="20" fill="#101010"/>
+          <path d="M298 122 C 306 126 314 132 318 138" stroke="#f5f5f5" stroke-width="3" fill="none" opacity=".55"/>
+        </svg>
+      </div>
+      <div class="stripe"></div>
+      <div class="slashes">&lt;&lt;&lt;</div>
+      <div class="vert">BootFit / V1 2026</div>
+
+      <div class="float-card">
+        <div class="fc-model">Future 8 Ultimate</div>
+        <div class="fc-label">Recommended Size</div>
+        <div class="fc-size">US 10</div>
+        <div class="fc-conf"><span class="dot"></span>Moderate Confidence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<div class="trust">
+  <div class="wrap">
+    <span>Official Brand Sizing</span>
+    <span>Expert Reviews</span>
+    <span>Community Fit Reports</span>
+    <span>Transparent Recommendations</span>
+  </div>
+</div>
+
+<!-- ============ HOW ============ -->
+<section class="how">
+  <div class="wrap">
+    <div class="label">How it works</div>
+    <div class="how-row">
+      <div>
+        <div class="how-num">01</div>
+        <div class="how-t">Choose a boot that already fits.</div>
+        <div class="how-d">Your best-fitting current boot tells us more about your foot than any measurement.</div>
+      </div>
+      <div>
+        <div class="how-num">02</div>
+        <div class="how-t">Tell us how it fits.</div>
+        <div class="how-d">Length and width, separately. Thirty seconds, no anatomy quiz.</div>
+      </div>
+      <div>
+        <div class="how-num">03</div>
+        <div class="how-t">Know what size to buy next.</div>
+        <div class="how-d">A size, a confidence tier, and the exact reasoning behind both.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWCASE ============ -->
+<section class="show" id="showcase">
+  <div class="wrap">
+    <div class="label">The recommendation, explained</div>
+    <div class="show-grid">
+      <div>
+        <h2>Every size comes<br>with a <em>why.</em></h2>
+        <p class="show-lede">No black box. BootFit separates <b>facts</b> from <b>prediction</b> and shows the evidence behind every recommendation, so you decide with open eyes.</p>
+      </div>
+      <div class="show-flow demo">
+        <div class="slab">
+          <div class="k">Current</div>
+          <select id="d-cur"></select>
+          <select id="d-size" style="font-size:16px"></select>
+        </div>
+        <div class="down">&darr;</div>
+        <div class="slab">
+          <div class="k">Target</div>
+          <select id="d-tgt"></select>
+        </div>
+        <div class="down">&darr;</div>
+        <div class="slab">
+          <div class="k">Recommended</div>
+          <div class="show-rec" id="show-rec">US 10</div>
+          <div class="demo-conf Moderate" id="d-conf" style="margin-top:14px"><span class="dot"></span><span id="show-conf">Moderate confidence</span></div>
+        </div>
+        <div class="show-because" id="show-why"></div>
+        <div class="demo-note">Try it: change either boot. Assumes your current pair fits well; the full tool asks how it actually fits.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="why">
+  <div class="wrap">
+    <h2>Why <em>BootFit.</em></h2>
+    <div class="why-grid">
+      <div class="why-col others">
+        <div class="head">Other methods</div>
+        <div class="why-li"><i>&times;</i>Generic size charts</div>
+        <div class="why-li"><i>&times;</i>Brand conversions</div>
+        <div class="why-li"><i>&times;</i>Guessing</div>
+        <div class="why-li"><i>&times;</i>Random Reddit opinions</div>
+      </div>
+      <div class="why-col bootfit">
+        <div class="head">BootFit</div>
+        <div class="why-li"><i>&#10003;</i>Starts with boots you already own</div>
+        <div class="why-li"><i>&#10003;</i>Explains every recommendation</div>
+        <div class="why-li"><i>&#10003;</i>Built only for football boots</div>
+        <div class="why-li"><i>&#10003;</i>Gets smarter with player feedback</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMUNITY ============ -->
+<section class="community">
+  <div class="wrap">
+    <div class="statement">Every recommendation starts with official sizing and expert research.<br><em>Every report players log makes the next one better.</em></div>
+    <div class="stats">
+      <div class="stat"><div class="n y">16</div><div class="t">Supported boots</div></div>
+      <div class="stat"><div class="n">5</div><div class="t">Brands covered</div></div>
+      <div class="stat"><div class="n">0</div><div class="t">Verified reports, so far</div></div>
+    </div>
+    <p class="invite">Help build the most accurate football boot sizing database.</p>
+  </div>
+</section>
+
+<!-- ============ BRANDS ============ -->
+<div class="brands-line">
+  <div class="wrap">
+    <span>Nike</span><span>Adidas</span><span>Puma</span><span>Mizuno</span><span>New Balance</span>
+  </div>
+</div>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <h2>Questions.</h2>
+    <div class="faq-list">
+      <details>
+        <summary>How accurate is BootFit?</summary>
+        <p>Honest answer: it depends on the evidence. Recommendations built from a boot you already own are the most reliable. Every result carries a confidence tier, and when the evidence is thin we say so instead of guessing. As players log real purchase outcomes, accuracy improves for everyone.</p>
+      </details>
+      <details>
+        <summary>How is this different from a size chart?</summary>
+        <p>A size chart maps your foot to a number. BootFit maps one boot to another: it knows the Ultra 5 runs long, the Predator runs slightly short, and the F50 is too narrow to fix by sizing up. Charts cannot tell you any of that.</p>
+      </details>
+      <details>
+        <summary>Why do you ask about my current boots?</summary>
+        <p>Because a boot you wear every week is the most precise measuring device you own. How it fits in length and width tells us your foot shape better than any self-assessment about arches or toe types.</p>
+      </details>
+      <details>
+        <summary>What if I do not own football boots?</summary>
+        <p>Use Foot Profile mode: two measurements, your everyday sneakers, and three quick questions. It is clearly labeled as lower confidence, and the moment you add a boot that fits, your recommendations upgrade automatically.</p>
+      </details>
+      <details>
+        <summary>Is my data private?</summary>
+        <p>Fit reports are anonymous and only ever used in aggregate to improve sizing recommendations. We never sell personal data.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" id="final">
+  <div class="wrap">
+    <h2>Know what size<br><em>to buy.</em></h2>
+    <a class="btn-y" href="#" onclick="showTab('finder');return false">Find My Size &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="fine">BootFit, 2026. Sizing is guidance, not a guarantee.</span>
+    <span>
+      <a href="#legal">Privacy</a><a href="#legal">Disclaimer</a><a href="mailto:infawebsdesign@gmail.com">Contact</a><a href="mailto:infawebsdesign@gmail.com?subject=Suggest%20a%20boot">Suggest a boot</a>
+    </span>
+  </div>
+  <div class="wrap" id="legal" style="padding-top:0">
+    <p class="fine" style="line-height:1.7; max-width:820px">
+      BootFit is an independent tool and is not affiliated with, sponsored by, or endorsed by Nike, Adidas, Puma, Mizuno, or New Balance.
+      Boot and brand names are used only to identify the products being discussed. Fit observations are summarized from linked public reviews and official size charts.
+      Privacy: BootFit itself has no accounts, no cookies, and no tracking. Nothing you type into the tool leaves your browser, and fit reports are erased when you close the page.
+      The site is hosted on Vercel, which may automatically log basic technical data about visits (such as IP address, browser type, and pages requested) to serve and secure the site, as described in Vercel's own privacy policy.
+      Fonts load from Google Fonts, which receives a standard font request from your browser. Neither is controlled by BootFit, and BootFit never sees or stores this data.
+    </p>
+  </div>
+</footer>
+</div>
+
+<div class="appwrap hidden">
+
+  
+
+  
+
+  <!-- ============ FINDER ============ -->
+  <div id="tab-finder">
+
+    <div class="step">
+      <h2><span class="step-num">1</span>Start from a boot you own - or your foot measurement</h2>
+      <p class="hint">A boot that fits you well is the most reliable reference. No good reference? Use measurement mode.</p>
+      <div class="toggle2">
+        <button class="chip sel" id="mode-ref" onclick="setMode('ref')">I own a boot that fits</button>
+        <button class="chip" id="mode-measure" onclick="setMode('measure')">Measure my foot</button>
+      </div>
+    </div>
+
+    <!-- reference mode -->
+    <div id="ref-flow">
+      <div class="step" id="step-refboot">
+        <h2><span class="step-num">2</span>Which boot fits you best right now?</h2>
+        <p class="hint">Exact model and generation matter - fits change between generations.</p>
+        <div class="chips" id="ref-brands"></div>
+        <div class="boot-grid" id="ref-boots"></div>
+      </div>
+
+      <div class="step hidden" id="step-refsize">
+        <h2><span class="step-num">3</span>What size is it?</h2>
+        <p class="hint">Men's US sizing. Check the label inside the tongue if unsure.</p>
+        <select id="ref-size"></select>
+        <div class="size-echo" id="ref-size-echo"></div>
+      </div>
+
+      <div class="step hidden" id="step-lenfit">
+        <h2><span class="step-num">4</span>How does it fit in length?</h2>
+        <div class="seg" id="len-seg"></div>
+      </div>
+
+      <div class="step hidden" id="step-widfit">
+        <h2><span class="step-num">5</span>How does the forefoot fit?</h2>
+        <div class="seg" id="wid-seg"></div>
+      </div>
+
+      <div class="step hidden" id="step-heelfit">
+        <h2><span class="step-num">✚</span>And the heel? <span style="color:var(--faint);font-size:12px;font-weight:500">optional - heel and forefoot behave independently</span></h2>
+        <div class="chips" id="heel-chips"></div>
+      </div>
+
+      <div class="step hidden" id="step-morerefs">
+        <div id="ref-list"></div>
+        <button class="btn ghost" id="add-ref-btn" onclick="stashRefAndAddAnother()">+ Add another boot you own (improves accuracy)</button>
+        <p class="note">Each extra well-known boot sharpens the picture of your foot.</p>
+      </div>
+    </div>
+
+    <!-- measure mode: Foot Profile (Engine B) -->
+    <div id="measure-flow" class="hidden">
+      <div class="step">
+        <div class="engine-note">Engine B · Foot Profile <span class="stars"><b>★★★</b>☆☆</span><br>
+        <small>Own a boot that fits? The reference-boot engine <span class="stars"><b>★★★★★</b></span> is more accurate - add boots later and your recommendations improve.</small></div>
+      </div>
+
+      <div class="step">
+        <h2><span class="step-num">2</span>Foot length <span class="req">required</span></h2>
+        <p class="hint">Stand heel against a wall on a piece of paper. Mark your longest toe. Measure the longer foot.</p>
+        <svg class="measure-illus" viewBox="0 0 300 74" aria-hidden="true">
+          <rect x="6" y="6" width="10" height="62" rx="2" fill="#2a3140"/>
+          <ellipse cx="88" cy="52" rx="62" ry="15" fill="#1d2431" stroke="#3a4356"/>
+          <ellipse cx="145" cy="48" rx="14" ry="10" fill="#1d2431" stroke="#3a4356"/>
+          <line x1="16" y1="24" x2="159" y2="24" stroke="#b7f36b" stroke-width="1.6"/>
+          <line x1="16" y1="18" x2="16" y2="30" stroke="#b7f36b" stroke-width="1.6"/>
+          <line x1="159" y1="18" x2="159" y2="30" stroke="#b7f36b" stroke-width="1.6"/>
+          <text x="88" y="16" fill="#97a1b3" font-size="10" text-anchor="middle" font-family="sans-serif">length</text>
+          <text x="11" y="66" fill="#6b7688" font-size="8" font-family="sans-serif" transform="rotate(-90 11 66)"></text>
+        </svg>
+        <div class="unit-row">
+          <input type="number" id="pf-len" placeholder="e.g. 27.5" step="0.1" oninput="pfInput()">
+          <select id="pf-len-unit" onchange="pfInput()"><option value="cm">cm</option><option value="mm">mm</option><option value="in">inches</option></select>
+        </div>
+        <div class="size-echo" id="pf-len-echo"></div>
+      </div>
+
+      <div class="step">
+        <h2><span class="step-num">3</span>Forefoot width <span class="req">required</span></h2>
+        <p class="hint">Measure straight across the widest part of your foot (ball of foot, big-toe joint to pinky joint).</p>
+        <div class="unit-row">
+          <input type="number" id="pf-wid" placeholder="e.g. 10.2" step="0.1" oninput="pfInput()">
+          <select id="pf-wid-unit" onchange="pfInput()"><option value="cm">cm</option><option value="mm">mm</option><option value="in">inches</option></select>
+        </div>
+        <div class="size-echo" id="pf-wid-echo"></div>
+      </div>
+
+      <div class="step">
+        <h2><span class="step-num">4</span>What athletic shoes do you wear most?</h2>
+        <p class="hint">Optional but valuable - everyday sneakers are a useful cross-check on your measurement.</p>
+        <div class="chips" id="pf-sneakers"></div>
+        <div id="pf-sneaker-detail" class="hidden" style="margin-top:12px">
+          <select id="pf-sneaker-size" onchange="pfInput()"></select>
+          <div class="chips" id="pf-sneaker-fit" style="margin-top:10px"></div>
+        </div>
+      </div>
+
+      <div class="step">
+        <h2><span class="step-num">5</span>How do you like football boots to feel?</h2>
+        <div class="seg" id="pf-feel"></div>
+      </div>
+
+      <div class="step">
+        <h2><span class="step-num">6</span>Three quick questions</h2>
+        <div class="expq"><p>Do football boots usually squeeze your pinky toe?</p>
+          <div class="chips" id="pf-exp-pinky"></div></div>
+        <div class="expq"><p>Do your heels usually slip in boots?</p>
+          <div class="chips" id="pf-exp-heel"></div></div>
+        <div class="expq"><p>Have you ever returned boots because they were too narrow?</p>
+          <div class="chips" id="pf-exp-narrow"></div></div>
+      </div>
+
+      <button class="btn hidden" id="pf-build-btn" onclick="buildProfile()">Build my foot profile</button>
+      <div id="pf-profile-card"></div>
+    </div>
+
+    <div class="step hidden" id="step-pref">
+      <h2><span class="step-num" id="pref-num">6</span>How do you like your boots to fit?</h2>
+      <div class="toggle2">
+        <button class="chip sel" id="pref-standard" onclick="setPref('standard')">Standard - a thumb's width feel</button>
+        <button class="chip" id="pref-tight" onclick="setPref('tight')">Tight match fit</button>
+      </div>
+    </div>
+
+    <div class="step hidden" id="step-target">
+      <h2><span class="step-num" id="target-num">7</span>Which boot are you buying?</h2>
+      <div class="chips" id="target-brands"></div>
+      <div class="boot-grid" id="target-boots"></div>
+    </div>
+
+    <button class="btn hidden" id="go-btn" onclick="runRecommendation()">Get my size</button>
+
+    <div id="result-area"></div>
+  </div>
+
+  <!-- ============ COMPARE ============ -->
+  <div id="tab-compare" class="hidden">
+    <div class="step">
+      <h2>Compare up to 3 target boots</h2>
+      <p class="hint" id="cmp-hint">Set up your reference boot in the Size Finder first - then pick targets here.</p>
+      <div class="boot-grid" id="cmp-boots"></div>
+      <div style="margin-top:14px"><button class="btn" id="cmp-btn" onclick="runCompare()" disabled>Compare</button></div>
+    </div>
+    <div id="cmp-result"></div>
+  </div>
+
+  <!-- ============ PROFILE ============ -->
+  <div id="tab-profile" class="hidden">
+    <div class="step">
+      <h2>Your foot profile</h2>
+      <div id="profile-body"><div class="empty">Complete the Size Finder once and your estimated foot profile will appear here.</div></div>
+    </div>
+    <div class="step">
+      <h2>Recommendation history</h2>
+      <div id="history-body"><div class="empty">No recommendations yet.</div></div>
+    </div>
+    <div class="step">
+      <h2>Your fit reports</h2>
+      <p class="hint">Bought a boot we recommended? Log what actually happened - this is the data that makes sizing tools trustworthy.</p>
+      <div id="reports-body"><div class="empty">No reports yet.</div></div>
+    </div>
+    <p class="note">This prototype keeps your profile in memory for this session only. The production version stores it in your account (Supabase), which is also what powers community sizing evidence.</p>
+  </div>
+
+  <!-- ============ DATA ============ -->
+  <div id="tab-data" class="hidden">
+    <div class="step">
+      <h2>Where this data comes from</h2>
+      <p class="hint" style="margin-bottom:0">
+        Seed data researched from published reviewer sources, July 2026. Each boot carries its own data-confidence
+        label, and recommendations inherit it. Nothing here is a community report count yet - no fake numbers.
+        The production roadmap replaces reviewer consensus with verified owner fit reports as they accumulate.
+      </p>
+    </div>
+    <div id="data-list"></div>
+    <div class="step">
+      <h2>How the engine works</h2>
+      <p class="hint" style="margin-bottom:0">
+        1. Your reference boot + size converts to a foot-length estimate in millimetres via the brand's size chart, adjusted by how you say it fits.
+        2. Each boot's known length tendency (runs short / true / long, in mm) shifts its effective internal length.
+        3. We pick the half-size closest to your preferred toe allowance (7&nbsp;mm standard, 4&nbsp;mm match fit).
+        4. Width is checked separately - a half size can't fix a narrow last, so mismatches produce a "consider another model" verdict instead of a bigger number.
+        5. Confidence reflects data quality and how cleanly your foot fits the target - it is never inflated to look precise.
+      </p>
+    </div>
+  </div>
+
+  
+
+</div>
+
+<script>
+/* ============================================================
+   BootFit - data + recommendation engine
+   Seed data researched July 2026 from reviewer sources.
+   Scales: width/volume 1-5 (1 = very narrow/low, 3 = medium, 5 = wide/high)
+   lengthOffsetMm: how the boot's internal length compares to its nominal
+   size. Positive = runs SHORT by that many mm (less room than nominal),
+   negative = runs LONG.
+   dataConfidence: how well-documented this model's fit is in our sources.
+   ============================================================ */
+
+// --- Brand size charts (men's). cmAt(us) = nominal foot-length fit in cm.
+// Anchored to published charts: Nike US10 = 28cm, 1cm per full size.
+// Differences between big brands at the same US size are small; we model
+// them with a per-brand mm offset from the Nike baseline (documented approx).
+const BRAND_CHARTS = {
+  Nike:          { ukDelta: -1.0, cmOffsetMm: 0,  euAnchor: { us: 10, eu: 44 },   euStep: 0.75 },
+  Adidas:        { ukDelta: -0.5, cmOffsetMm: 0,  euAnchor: { us: 10, eu: 44 },   euStep: 0.667 },
+  Puma:          { ukDelta: -1.0, cmOffsetMm: 2,  euAnchor: { us: 10, eu: 43.5 }, euStep: 0.667 },
+  Mizuno:        { ukDelta: -1.0, cmOffsetMm: 0,  euAnchor: { us: 10, eu: 44 },   euStep: 0.667 },
+  'New Balance': { ukDelta: -0.5, cmOffsetMm: 0,  euAnchor: { us: 10, eu: 44 },   euStep: 0.667 },
+};
+
+function usToCm(brand, us) {
+  const chart = BRAND_CHARTS[brand] || BRAND_CHARTS.Nike;
+  return 18 + us + chart.cmOffsetMm / 10; // Nike: US10 -> 28.0cm
+}
+function usToUk(brand, us) {
+  const chart = BRAND_CHARTS[brand] || BRAND_CHARTS.Nike;
+  return us + chart.ukDelta;
+}
+function usToEu(brand, us) {
+  const chart = BRAND_CHARTS[brand] || BRAND_CHARTS.Nike;
+  return Math.round((chart.euAnchor.eu + (us - chart.euAnchor.us) * (chart.euStep * 2) / 1.5) * 2) / 2;
+}
+
+// --- Boot database (exact model + generation, elite tier) ---
+const BOOTS = [
+  {
+    id: 'nike-mercurial-vapor-16-elite', brand: 'Nike', model: 'Mercurial Vapor 16 Elite',
+    gen: '2024-26', category: 'speed', material: 'Gripknit synthetic', lacing: 'laced',
+    lengthOffsetMm: 0, width: 3, toeBox: 3, midfoot: 3, heel: 4, instep: 3,
+    stretch: 1, breakIn: 'Soft out of the box; minimal break-in',
+    quirks: ['Heel counter runs wide for a speed boot - players with narrow heels report lockdown gaps', 'Upper can bunch in the rear midfoot'],
+    dataConfidence: 'high',
+    sources: [
+      { name: 'Lockhart Boot Blog review', url: 'https://lockhartbootblog.com/2024/07/22/nike-air-zoom-mercurial-vapor-16-elite-review/' },
+    ],
+  },
+  {
+    id: 'nike-mercurial-superfly-10-elite', brand: 'Nike', model: 'Mercurial Superfly 10 Elite',
+    gen: '2024-26', category: 'speed', material: 'Gripknit synthetic + Dynamic Fit collar', lacing: 'laced',
+    lengthOffsetMm: 0, width: 3, toeBox: 3, midfoot: 3, heel: 3, instep: 3,
+    stretch: 1, breakIn: 'Minimal; collar takes a session to settle',
+    quirks: ['Same last as the Vapor 16; the collar adds a locked-in ankle feel some players find restrictive'],
+    dataConfidence: 'medium',
+    sources: [
+      { name: 'Lockhart Boot Blog (Vapor 16, shared last)', url: 'https://lockhartbootblog.com/2024/07/22/nike-air-zoom-mercurial-vapor-16-elite-review/' },
+    ],
+  },
+  {
+    id: 'nike-phantom-gx2-elite', brand: 'Nike', model: 'Phantom GX 2 Elite',
+    gen: '2024-26', category: 'control', material: 'Gripknit synthetic knit', lacing: 'laced (asymmetric)',
+    lengthOffsetMm: 0, width: 4, toeBox: 4, midfoot: 4, heel: 3, instep: 3,
+    stretch: 1, breakIn: 'Short; upper bunching on narrow feet eases after a few sessions',
+    quirks: ['Wider last than GX 1 - built for wider feet', 'Narrow-footed players report midfoot bunching', 'Occasional heel slip on hard cuts'],
+    dataConfidence: 'high',
+    sources: [
+      { name: 'BOOTHYPE review', url: 'https://boothype.com/2024/04/02/nike-phantom-gx-2-elite-ag-review-a-step-forward-for-the-gx/' },
+    ],
+  },
+  {
+    id: 'nike-phantom-luna-2-elite', brand: 'Nike', model: 'Phantom Luna 2 Elite',
+    gen: '2024-26', category: 'control', material: 'Gripknit + Flyknit mid-cut cuff', lacing: 'laced (asymmetric)',
+    lengthOffsetMm: 0, width: 4, toeBox: 4, midfoot: 4, heel: 3, instep: 3,
+    stretch: 1, breakIn: 'Short; the knit cuff takes a session to settle',
+    quirks: ['Functionally the same last as the Phantom GX 2, with a mid-cut Flyknit cuff for ankle support', 'The cuff makes it harder to try on but adds a locked sock-like feel', 'Built for wider feet, like the GX 2'],
+    dataConfidence: 'medium',
+    sources: [
+      { name: 'The Soccer Factory review', url: 'https://thesoccerfactory.com/blogs/news/nike-phantom-luna-ii-elite-fg-review' },
+      { name: 'BOOTHYPE (GX 2, shared last)', url: 'https://boothype.com/2024/04/02/nike-phantom-gx-2-elite-ag-review-a-step-forward-for-the-gx/' },
+    ],
+  },
+  {
+    id: 'nike-tiempo-legend-10-elite', brand: 'Nike', model: 'Tiempo Legend 10 Elite',
+    gen: '2023-26', category: 'touch', material: 'FlyTouch Plus synthetic leather', lacing: 'laced',
+    lengthOffsetMm: 0, width: 3, toeBox: 3, midfoot: 3, heel: 3, instep: 3,
+    stretch: 2, breakIn: 'Minimal; upper molds to the foot like leather over the first sessions',
+    quirks: ['Adaptive upper accommodates slight width variations'],
+    dataConfidence: 'high',
+    sources: [
+      { name: 'Soccer Cleats 101 review', url: 'https://www.soccercleats101.com/2023/12/12/nike-tiempo-legend-10-elite-what-to-know-before-you-buy/' },
+    ],
+  },
+  {
+    id: 'adidas-predator-24-elite', brand: 'Adidas', model: 'Predator 24 Elite (laced)',
+    gen: '2024-25', category: 'control', material: 'Hybridtouch synthetic', lacing: 'laced (foldover tongue)',
+    lengthOffsetMm: 1, width: 3, toeBox: 3, midfoot: 3, heel: 3, instep: 3,
+    stretch: 1, breakIn: 'Snug out of the box; 2-4 sessions to settle',
+    quirks: ['Narrower, more anatomical last than the older Predator Accuracy', 'Foldover tongue slightly reduces ankle lockdown on the top lace holes'],
+    dataConfidence: 'high',
+    sources: [
+      { name: 'BOOTHYPE review', url: 'https://boothype.com/2024/02/20/adidas-predator-elite-review/' },
+      { name: 'Unisport adidas range guide', url: 'https://www.unisportstore.com/guides/adidas-predator-vs-f50-vs-copa/' },
+    ],
+  },
+  {
+    id: 'adidas-f50-elite', brand: 'Adidas', model: 'F50 Elite (laced)',
+    gen: '2024-26', category: 'speed', material: 'Fibertouch thin synthetic', lacing: 'laced',
+    lengthOffsetMm: 0, width: 2, toeBox: 2, midfoot: 2, heel: 3, instep: 2,
+    stretch: 1, breakIn: 'Near zero',
+    quirks: ['Narrowest of the adidas range - reviewers advise wide-footed players to avoid it rather than size up', 'Very low-volume wrap-around fit'],
+    dataConfidence: 'high',
+    sources: [
+      { name: 'Unisport adidas range guide', url: 'https://www.unisportstore.com/guides/adidas-predator-vs-f50-vs-copa/' },
+      { name: 'Soccer Gear Guide F50 sizing', url: 'https://soccergearguide.com/adidas-f50-sizing-guide/' },
+      { name: 'Pro:Direct F50 review', url: 'https://www.prodirectsport.com/soccer/articles/boots/adidas/f50/adidas-f50-review/' },
+    ],
+  },
+  {
+    id: 'adidas-copa-pure-2-elite', brand: 'Adidas', model: 'Copa Pure 2 Elite',
+    gen: '2023-25', category: 'touch', material: 'K-leather forefoot', lacing: 'laced',
+    lengthOffsetMm: 1, width: 4, toeBox: 4, midfoot: 3, heel: 3, instep: 4,
+    stretch: 2, breakIn: 'Comfortable out of the box; leather softens and molds over time',
+    quirks: ['Safest adidas choice for wide feet', 'Leather stretches roughly a half-width over its life - snug at first is normal'],
+    dataConfidence: 'high',
+    sources: [
+      { name: 'BOOTHYPE review', url: 'https://boothype.com/2023/12/12/adidas-copa-pure-2-review-copa-mundial-reincarnated/' },
+      { name: 'Unisport adidas range guide', url: 'https://www.unisportstore.com/guides/adidas-predator-vs-f50-vs-copa/' },
+    ],
+  },
+  {
+    id: 'puma-future-8-ultimate', brand: 'Puma', model: 'Future 8 Ultimate',
+    gen: '2025-26', category: 'control', material: 'FUZIONFIT³ stretch knit', lacing: 'laced',
+    lengthOffsetMm: 0, width: 4, toeBox: 4, midfoot: 4, heel: 3, instep: 4,
+    stretch: 2, breakIn: 'Adaptive knit needs a few sessions to settle',
+    quirks: ['Regular-to-wide adaptive fit; official Puma listing is "regular to wide"', 'Some narrow-footed players report heel gaps - lockdown varies by foot shape', 'Possible lace bite in long sessions'],
+    dataConfidence: 'medium',
+    sources: [
+      { name: 'Cleats Hub review', url: 'https://cleatshub.com/review/puma-future-8-ultimate' },
+      { name: 'Soccer Gear Guide (Future width)', url: 'https://soccergearguide.com/puma-future-for-wide-feet/' },
+    ],
+  },
+  {
+    id: 'puma-ultra-5-ultimate', brand: 'Puma', model: 'Ultra 5 Ultimate',
+    gen: '2024-26', category: 'speed', material: 'Ultra-thin synthetic', lacing: 'laced',
+    lengthOffsetMm: -4, width: 3, toeBox: 3, midfoot: 3, heel: 3, instep: 3,
+    stretch: 1, breakIn: 'Zero - padded heel pods, comfortable immediately',
+    quirks: ['Runs LONG vs earlier Ultras - reviewers consistently advise going down half a size', 'Wider forefoot than typical speed boots; a rare speed option for medium-wide feet'],
+    dataConfidence: 'high',
+    sources: [
+      { name: 'Soccer Rehab review', url: 'https://soccerrehab.com/blog/puma-ultra-5-ultimate-review' },
+      { name: 'FourFourTwo review', url: 'https://www.fourfourtwo.com/reviews/puma-ultra-5-ultimate-review-lightweight-snappy-responsive-these-are-everything-you-want-from-a-speed-boot' },
+    ],
+  },
+  {
+    id: 'puma-king-ultimate', brand: 'Puma', model: 'King Ultimate',
+    gen: '2023-26', category: 'touch', material: 'K-Better synthetic leather', lacing: 'laced',
+    lengthOffsetMm: 1, width: 2, toeBox: 2, midfoot: 2, heel: 3, instep: 2,
+    stretch: 2, breakIn: 'Short; the thin upper softens quickly',
+    quirks: ['Despite the King heritage, this generation is slim: the narrowest current Puma, even narrower than the Ultra', 'Low, pointed toe box; some players report toenail pressure', 'Reviewers advise wide feet to go up half a size, or pick another model'],
+    dataConfidence: 'medium',
+    sources: [
+      { name: 'BOOTHYPE review', url: 'https://boothype.com/2023/04/13/puma-king-ultimate-review-better-but-not-yet-a-true-king/' },
+      { name: 'FourFourTwo review', url: 'https://www.fourfourtwo.com/reviews/puma-king-ultimate-review-is-this-reimagining-of-a-cult-classic-worth-the-upgrade' },
+    ],
+  },
+  {
+    id: 'mizuno-morelia-neo-4-elite', brand: 'Mizuno', model: 'Morelia Neo IV Elite',
+    gen: '2023-26', category: 'speed', material: 'K-leather', lacing: 'laced',
+    lengthOffsetMm: 0, width: 2, toeBox: 2, midfoot: 2, heel: 2, instep: 2,
+    stretch: 2, breakIn: 'Short; leather adapts to the forefoot but the soleplate width never grows',
+    quirks: ['Narrow-medium, low-volume last with a tapered toe box', 'Compare foot length in CM to Mizuno\'s chart rather than carrying over your Nike/adidas EU size', 'Genuinely wide feet: reviewers point to the Morelia II instead'],
+    dataConfidence: 'high',
+    sources: [
+      { name: 'TheGearFitter fit & sizing guide', url: 'https://thegearfitter.com/mizuno-morelia-neo-fit-and-sizing/' },
+      { name: 'Lockhart Boot Blog (Neo IV Beta)', url: 'https://lockhartbootblog.com/2025/05/11/mizuno-morelia-neo-iv-beta-review-innovation-pack/' },
+    ],
+  },
+  {
+    id: 'mizuno-morelia-2', brand: 'Mizuno', model: 'Morelia II (Japan/Elite)',
+    gen: 'evergreen', category: 'touch', material: 'K-leather', lacing: 'laced',
+    lengthOffsetMm: 0, width: 3.5, toeBox: 3, midfoot: 3, heel: 3, instep: 3,
+    stretch: 2, breakIn: 'Minimal; soft kangaroo leather molds fast',
+    quirks: ['The classic Mizuno choice when the Morelia Neo is too narrow: same craftsmanship, roomier last', 'Soft leather stretches roughly half a width over its life', 'Use Mizuno\'s CM chart rather than carrying over your Nike/adidas EU size'],
+    dataConfidence: 'medium',
+    sources: [
+      { name: 'TheGearFitter Mizuno fit guide', url: 'https://thegearfitter.com/mizuno-morelia-neo-fit-and-sizing/' },
+    ],
+  },
+  {
+    id: 'mizuno-alpha-2-elite', brand: 'Mizuno', model: 'Alpha 2 Elite',
+    gen: '2025-26', category: 'speed', material: 'Stiff microfiber synthetic', lacing: 'laced',
+    lengthOffsetMm: -3, width: 2, toeBox: 3, midfoot: 2, heel: 2, instep: 3,
+    stretch: 0, breakIn: 'Long - upper stays stiff for 3+ hours of play',
+    quirks: ['Runs long; many players go half a size down, though some fit true to size', 'Tall, rounded toe box can leave dead space above the toes', 'ZeroGlide lining gives exceptional lockdown'],
+    dataConfidence: 'medium',
+    sources: [
+      { name: 'Lockhart Boot Blog (Alpha 2 Japan)', url: 'https://lockhartbootblog.com/2025/03/20/mizuno-alpha-2-japan-review/' },
+      { name: 'Soccer Rehab (Alpha 2 Elite AG)', url: 'https://soccerrehab.com/blog/mizuno-alpha-2-elite-ag-review' },
+    ],
+  },
+  {
+    id: 'nb-furon-v7plus-pro', brand: 'New Balance', model: 'Furon v7+ Pro',
+    gen: '2024-26', category: 'speed', material: 'Soft knit', lacing: 'laced',
+    lengthOffsetMm: 4, width: 2, toeBox: 2, midfoot: 3, heel: 3, instep: 3,
+    stretch: 1, breakIn: 'Comfortable out of the box',
+    quirks: ['Runs SMALL - reviewers advise at least half a size up', 'NB sizing diverges noticeably from Nike/adidas; try on if you can', 'One of the few speed boots offered in an official 2E wide fit'],
+    dataConfidence: 'medium',
+    sources: [
+      { name: 'FourFourTwo review', url: 'https://www.fourfourtwo.com/reviews/new-balance-furon-v7-pro-review-the-boot-that-proves-why-new-balance-should-never-be-underrated-again' },
+    ],
+  },
+  {
+    id: 'nb-tekela-v4plus-pro', brand: 'New Balance', model: 'Tekela v4+ Pro (laceless)',
+    gen: '2023-25', category: 'control', material: 'Hypoknit stretch knit', lacing: 'laceless',
+    lengthOffsetMm: 0, width: 3, toeBox: 3, midfoot: 4, heel: 3, instep: 4,
+    stretch: 2, breakIn: 'Knit compresses then relaxes over first sessions',
+    quirks: ['Laceless - fit cannot be adjusted, so the size has to be right', 'Higher midfoot volume suits higher insteps', 'Also available in official wide fit'],
+    dataConfidence: 'low',
+    sources: [
+      { name: 'FourFourTwo Tekela v4 review', url: 'https://www.fourfourtwo.com/reviews/new-balance-tekela-v4-football-boot-review-these-anti-slip-boots-will-grow-on-you-but-only-confident-players-need-apply' },
+    ],
+  },
+];
+
+// --- Fit vocabulary ---
+// Allowance = free space in front of the longest toe, in mm.
+const LENGTH_FIT = {
+  touching:  { label: 'Toes touch the front', allowanceMm: 0 },
+  snug:      { label: 'Very snug',            allowanceMm: 3 },
+  ideal:     { label: 'Ideal',                allowanceMm: 7 },
+  roomy:     { label: 'Slight extra room',    allowanceMm: 12 },
+  long:      { label: 'Too long',             allowanceMm: 18 },
+};
+// Width fit shifts our estimate of the user's foot width relative to the
+// reference boot's width band (in width-scale units).
+const WIDTH_FIT = {
+  painful: { label: 'Painfully tight', delta: +1.25 },
+  snug:    { label: 'Snug',            delta: +0.5 },
+  ideal:   { label: 'Ideal',           delta: 0 },
+  roomy:   { label: 'Roomy',           delta: -0.75 },
+  wide:    { label: 'Too wide',        delta: -1.25 },
+};
+
+const IDEAL_ALLOWANCE = 7;          // mm of toe room we aim for
+const TIGHT_ALLOWANCE = 4;          // "match-fit" preference
+const HALF_SIZE_MM = 5;             // one half size ≈ 5mm internal length
+
+function halfSizes(min, max) {
+  const out = [];
+  for (let s = min; s <= max + 1e-9; s += 0.5) out.push(Math.round(s * 2) / 2);
+  return out;
+}
+
+// Internal length (mm) of a boot at a given US size
+function internalLengthMm(boot, us) {
+  return usToCm(boot.brand, us) * 10 - boot.lengthOffsetMm;
+}
+
+/**
+ * Estimate the user's foot from one reference boot.
+ * refs: [{ bootId, us, lengthFit, widthFit }]
+ */
+function estimateFoot(refs) {
+  const ests = refs.map(r => {
+    const boot = BOOTS.find(b => b.id === r.bootId);
+    const lf = LENGTH_FIT[r.lengthFit];
+    const wf = WIDTH_FIT[r.widthFit];
+    // foot length = internal length minus the allowance the user reports
+    const footLenMm = internalLengthMm(boot, r.us) - lf.allowanceMm;
+    // foot width band = boot's width band shifted by reported width fit
+    const footWidth = boot.width + wf.delta;
+    // reliability: ideal fits tell us the most
+    const wLen = r.lengthFit === 'ideal' ? 1.0 : (r.lengthFit === 'snug' || r.lengthFit === 'roomy') ? 0.75 : 0.5;
+    const wWid = r.widthFit === 'ideal' ? 1.0 : 0.7;
+    return { boot, footLenMm, footWidth, wLen, wWid };
+  });
+  const footLenMm = ests.reduce((a, e) => a + e.footLenMm * e.wLen, 0) / ests.reduce((a, e) => a + e.wLen, 0);
+  const footWidth = ests.reduce((a, e) => a + e.footWidth * e.wWid, 0) / ests.reduce((a, e) => a + e.wWid, 0);
+  // spread across references reduces confidence
+  const lenSpread = ests.length > 1 ? Math.max(...ests.map(e => e.footLenMm)) - Math.min(...ests.map(e => e.footLenMm)) : 0;
+  // heel behaves independently of forefoot width - track it separately
+  const heelSensitive = refs.some(r => r.heelFit === 'slips');
+  return { footLenMm, footWidth, lenSpread, refCount: ests.length, heelSensitive };
+}
+
+/** Infer fit preference from how the user buys boots (race-fit players reveal themselves) */
+function inferPref(refs) {
+  if (!refs || !refs.length) return 'standard';
+  const tightBuyer = refs.every(r => r.lengthFit === 'touching' || r.lengthFit === 'snug');
+  const roomyBuyer = refs.every(r => r.lengthFit === 'roomy' || r.lengthFit === 'long');
+  return tightBuyer ? 'tight' : roomyBuyer ? 'comfort' : 'standard';
+}
+
+/** Direct measurement mode (first-time buyers) */
+function footFromMeasurement(footLenMm, widthPref) {
+  // widthPref: 'narrow' | 'medium' | 'wide'
+  const map = { narrow: 2, medium: 3, wide: 4.25 };
+  return { footLenMm, footWidth: map[widthPref] ?? 3, lenSpread: 0, refCount: 0, measured: true };
+}
+
+/* ---------- Engine B: Foot Profile Mode ---------- */
+// Everyday sneakers as weak references - well-documented fits only.
+const SNEAKERS = [
+  { id: 'af1',        name: 'Nike Air Force 1',    lengthOffsetMm: -5, note: 'runs long - most people size down half' },
+  { id: 'pegasus',    name: 'Nike Pegasus',        lengthOffsetMm: 0,  note: 'true to size' },
+  { id: 'samba',      name: 'Adidas Samba',        lengthOffsetMm: -4, note: 'runs long and narrow' },
+  { id: 'ultraboost', name: 'Adidas Ultraboost',   lengthOffsetMm: 0,  note: 'true to size, snug knit' },
+  { id: 'nb990',      name: 'New Balance 990',     lengthOffsetMm: 0,  note: 'true to size, roomier last' },
+  { id: 'none',       name: 'Other / skip this',   lengthOffsetMm: null, note: '' },
+];
+const SNEAKER_FIT_ALLOWANCE = { snug: 4, ideal: 9, roomy: 15 }; // sneakers are worn roomier than boots
+
+/**
+ * Build a foot estimate from objective measurements + everyday-shoe
+ * experience. Deliberately lower confidence than reference-boot mode.
+ * input: { lenMm, widthMm, sneakerId, sneakerUs, sneakerFit,
+ *          exp: { pinky: always|sometimes|never,
+ *                 heel: often|sometimes|never,
+ *                 returnedNarrow: yes|no } }
+ */
+function footFromProfile(input) {
+  let footLenMm = input.lenMm;
+  let hasSneaker = false;
+  const sneaker = SNEAKERS.find(s => s.id === input.sneakerId);
+  if (sneaker && sneaker.lengthOffsetMm !== null && input.sneakerUs && input.sneakerFit) {
+    const internal = (18 + input.sneakerUs) * 10 - sneaker.lengthOffsetMm;
+    const sneakerLen = internal - (SNEAKER_FIT_ALLOWANCE[input.sneakerFit] ?? 9);
+    footLenMm = 0.7 * input.lenMm + 0.3 * sneakerLen; // measurement dominates
+    hasSneaker = true;
+  }
+  // width from the measured ratio - no anatomy quizzes
+  const ratio = input.widthMm / input.lenMm;
+  let footWidth = ratio < 0.345 ? 1.75 : ratio < 0.36 ? 2.25 : ratio < 0.375 ? 3 : ratio < 0.39 ? 3.75 : 4.5;
+  // experience answers people actually know
+  const exp = input.exp || {};
+  if (exp.pinky === 'always') footWidth += 0.5;
+  if (exp.pinky === 'never') footWidth -= 0.25;
+  if (exp.returnedNarrow === 'yes') footWidth += 0.5;
+  footWidth = Math.max(1.5, Math.min(5, footWidth));
+  const heelSensitive = exp.heel === 'often';
+  return { footLenMm, footWidth, lenSpread: 0, refCount: 0, measured: true, profile: true, hasSneaker, heelSensitive, exp, input };
+}
+
+const WIDTH_BAND = w => w < 2.4 ? 'Narrow' : w < 3.4 ? 'Medium' : w < 4.2 ? 'Medium-wide' : 'Wide';
+
+/** 23andMe-style profile summary shown BEFORE any recommendation */
+function profileSummary(foot, pref) {
+  const prefLabel = { tight: 'Race fit (very snug)', standard: 'Balanced', comfort: 'Comfort fit' }[pref] || 'Balanced';
+  let likely;
+  if (foot.footWidth <= 2.5) likely = pref === 'comfort'
+    ? 'Narrow lasts with forgiving uppers - Morelia Neo (leather), F50'
+    : 'Speed boots - Mercurial, F50, Morelia Neo';
+  else if (foot.footWidth >= 3.75) likely = 'Roomier lasts - Phantom GX 2, Copa Pure 2, Future 8';
+  else likely = 'Most medium lasts work - pick by playing style, not width';
+  return {
+    lengthCm: (foot.footLenMm / 10).toFixed(1),
+    band: WIDTH_BAND(foot.footWidth),
+    prefLabel,
+    likely,
+    heelNote: foot.heelSensitive ? 'You report frequent heel slip - boots with roomy heels get flagged for you' : null,
+  };
+}
+
+/**
+ * Core recommendation.
+ * foot: from estimateFoot / footFromMeasurement
+ * targetId: boot id
+ * pref: 'standard' | 'tight'
+ */
+function recommend(foot, targetId, pref = 'standard') {
+  const target = BOOTS.find(b => b.id === targetId);
+  const wantAllowance = pref === 'tight' ? TIGHT_ALLOWANCE : pref === 'comfort' ? 10 : IDEAL_ALLOWANCE;
+
+  // pick the half size whose allowance is closest to the desired allowance
+  const candidates = halfSizes(6, 14).map(us => {
+    const allowance = internalLengthMm(target, us) - foot.footLenMm;
+    return { us, allowance, err: Math.abs(allowance - wantAllowance) };
+  }).sort((a, b) => a.err - b.err);
+
+  const best = candidates[0];
+  const alt = candidates[1];
+
+  // --- width & volume compatibility ---
+  const widthGap = target.width - foot.footWidth; // + roomy, - tight
+  let widthVerdict, widthSeverity; // severity 0 ok, 1 caution, 2 mismatch
+  if (widthGap <= -1.4)      { widthVerdict = 'likely too narrow for your foot'; widthSeverity = 2; }
+  else if (widthGap <= -0.7) { widthVerdict = 'will feel tight across the forefoot' + (target.stretch >= 2 ? ', though the upper stretches with wear' : ''); widthSeverity = target.stretch >= 2 ? 1 : 2; }
+  else if (widthGap < 0.7)   { widthVerdict = 'width looks like a good match'; widthSeverity = 0; }
+  else if (widthGap < 1.4)   { widthVerdict = 'will feel a little roomy in the forefoot'; widthSeverity = 1; }
+  else                       { widthVerdict = 'likely too wide - expect sloppiness on cuts'; widthSeverity = 2; }
+
+  const warnings = [];
+  if (widthSeverity === 2 && widthGap < 0) {
+    warnings.push(`Sizing up would add toe room without fixing the narrow forefoot. Consider a wider model instead (e.g. ${suggestAlternatives(foot, target).map(b => b.model).join(', ') || 'a wider last'}).`);
+  }
+  if (widthSeverity === 2 && widthGap > 0) {
+    warnings.push('A smaller size would shorten the boot without fixing the excess width. A narrower model would fit your foot shape better.');
+  }
+  if (target.lacing === 'laceless') {
+    warnings.push('Laceless boot - there is no way to tune the fit, so treat this size as a stricter requirement.');
+  }
+  if (foot.heelSensitive && target.heel >= 4) {
+    warnings.push('You report frequent heel slip - this boot\'s roomier heel makes that more likely. Prioritize models with locked-in heels.');
+  }
+  target.quirks.forEach(q => warnings.push(q));
+
+  // --- confidence ---
+  const confMap = { high: 1.0, medium: 0.75, low: 0.5 };
+  let score = 0.55 * confMap[target.dataConfidence];
+  if (foot.profile) score += 0.15 + (foot.hasSneaker ? 0.05 : 0); // Engine B: measurements + experience
+  else if (foot.measured) score += 0.12;
+  else score += 0.3 * Math.min(foot.refCount, 2) / 2 + 0.15; // Engine A: reference boots beat everything
+  if (foot.lenSpread > 6) score -= 0.12;
+  if (widthSeverity === 1) score -= 0.08;
+  if (widthSeverity === 2) score -= 0.2;
+  if (best.err > 2.5) score -= 0.08; // desired allowance falls between half sizes
+  if (foot.profile || foot.measured) score = Math.min(score, 0.72); // Engine B can never claim High
+  const confidence = score >= 0.78 ? 'High' : score >= 0.58 ? 'Moderate' : 'Low';
+  const pct = Math.max(15, Math.min(95, Math.round(score * 100)));
+
+  // --- evidence: ONLY real factors, never invented counts ---
+  const evidence = [];
+  evidence.push(`${target.sources.length} reviewer source${target.sources.length > 1 ? 's' : ''} on this exact model (${target.dataConfidence} data confidence)`);
+  evidence.push(`Official ${target.brand} size chart (CM baseline)`);
+  if (foot.profile) {
+    evidence.push('Your measured foot length + forefoot width');
+    if (foot.hasSneaker) evidence.push('Your everyday sneaker size and fit (weak but useful signal)');
+    evidence.push('Your fit-experience answers (pinky pressure, heel slip, returns)');
+    evidence.push('Engine B (foot profile) - add a boot you own later and recommendations get sharper');
+  }
+  else if (foot.measured) evidence.push('Your direct foot measurement (less reliable than a reference boot)');
+  else evidence.push(`${foot.refCount} reference boot${foot.refCount > 1 ? 's' : ''} you told us about`);
+  evidence.push('0 community fit reports so far - reviewer consensus only. Reports you log will start counting here.');
+
+  // --- expected fit descriptors ---
+  const feel = (a) => a <= 1 ? 'Toes at the front' : a <= 4.5 ? 'Match-fit snug' : a <= 9 ? 'Ideal' : a <= 14 ? 'Relaxed' : 'Too long';
+  const expected = {
+    length: feel(best.allowance),
+    forefoot: widthGap <= -0.7 ? 'Tight' : widthGap < 0.7 ? 'Comfortable' : 'Roomy',
+    heel: target.heel >= 4 ? 'Watch for heel movement' : target.heel <= 2 ? 'Very locked in' : 'Secure',
+    breakIn: target.breakIn,
+  };
+
+  // --- alternate-size tradeoff ("Why not US X?") ---
+  const altSmaller = alt.us < best.us;
+  const tradeoff = {
+    us: alt.us,
+    allowance: alt.allowance,
+    pros: altSmaller
+      ? ['Closer, more responsive match fit', 'Less foot movement on hard cuts']
+      : ['More toe room - safer if you sit between sizes', 'Room for thick socks or swelling in long games'],
+    cons: altSmaller
+      ? [`Only ~${Math.round(Math.max(alt.allowance, 0))} mm toe room - higher toe-pressure risk`, ...(widthGap < -0.3 ? ['Would make the already-snug width worse'] : [])]
+      : [`~${Math.round(alt.allowance)} mm toe room - foot may slide on cuts`, ...(widthGap > 0.3 ? ['Adds even more volume to an already roomy fit'] : [])],
+  };
+
+  // --- conservative stance when evidence is weak ---
+  const conservative = confidence === 'Low'
+    ? 'Evidence for this pick is limited. If in doubt, stay closest to your proven size and treat this as a starting point - or try in store before committing.'
+    : null;
+
+  // --- size ladder: how sure are we about each nearby size? ---
+  const ladderFeel = (a) => {
+    if (a < 1) return ['red', 'Not recommended - toes at or past the front'];
+    if (a < 3.5) return pref === 'tight' ? ['amber', 'Acceptable for a strict race fit'] : ['red', 'Not recommended - very high toe-pressure risk'];
+    if (a <= (pref === 'tight' ? 7 : 10)) return ['green', 'We\'d buy this one'];
+    if (a <= 13) return ['amber', 'Acceptable - roomier than you asked for'];
+    return ['red', 'Not recommended - foot will slide'];
+  };
+  const ladder = [best.us - 0.5, best.us, best.us + 0.5].map(us => {
+    const a = internalLengthMm(target, us) - foot.footLenMm;
+    const [tone, note] = us === best.us
+      ? [confidence === 'High' ? 'green' : 'amber', confidence === 'High' ? 'We\'d buy this confidently' : 'Best available pick on current evidence']
+      : ladderFeel(a);
+    return { us, allowance: a, tone, note };
+  });
+
+  // --- objective facts, kept separate from our prediction ---
+  const tendencyText = target.lengthOffsetMm >= 3 ? 'Runs noticeably short' : target.lengthOffsetMm >= 1 ? 'Runs slightly short' :
+                       target.lengthOffsetMm <= -3 ? 'Runs noticeably long' : target.lengthOffsetMm <= -1 ? 'Runs slightly long' : 'True to size';
+  const facts = [
+    ['Official size chart', `${target.brand} US ${best.us} = ${usToCm(target.brand, best.us).toFixed(1)} cm nominal`],
+    ['Reviewer consensus', tendencyText.toLowerCase().replace(/^./, c => c.toUpperCase())],
+    ['Fit class', `${foot ? '' : ''}${target.width <= 2 ? 'Narrow' : target.width <= 2.6 ? 'Narrow-medium' : target.width <= 3.4 ? 'Medium' : target.width <= 4.2 ? 'Medium-wide' : 'Wide'} last`],
+    ['Upper', target.material],
+    ['Break-in', target.breakIn],
+  ];
+
+  return {
+    target, us: best.us, allowance: best.allowance,
+    uk: usToUk(target.brand, best.us), eu: usToEu(target.brand, best.us),
+    cm: usToCm(target.brand, best.us),
+    alt: { us: alt.us, allowance: alt.allowance },
+    widthVerdict, widthSeverity, warnings, confidence, score, pct,
+    evidence, tradeoff, conservative, ladder, facts,
+    expected, pref,
+  };
+}
+
+/** Skimmable why-bullets instead of a paragraph */
+function whyBullets(foot, refs, rec) {
+  const t = rec.target;
+  const out = [];
+  if (refs && refs.length) {
+    const r0 = refs[0];
+    const rb = BOOTS.find(b => b.id === r0.bootId);
+    out.push(`Your ${rb.model} in US ${r0.us} puts your foot at ≈ ${(foot.footLenMm / 10).toFixed(1)} cm`);
+    if (refs.length > 1) out.push(`${refs.length} reference boots agree within ${foot.lenSpread <= 6 ? 'half a size' : 'more than half a size - treat cautiously'}`);
+  } else if (foot.profile) {
+    out.push(`Foot length ${(foot.footLenMm / 10).toFixed(1)} cm${foot.hasSneaker ? ' (measurement + sneaker cross-check)' : ' (your measurement)'}`);
+    out.push(`Forefoot: ${WIDTH_BAND(foot.footWidth).toLowerCase()} - from your width measurement and experience answers`);
+    out.push(`You prefer a ${rec.pref === 'tight' ? 'race fit (very snug)' : rec.pref === 'comfort' ? 'comfort fit' : 'balanced fit'}`);
+  } else {
+    out.push(`Your measured foot length: ${(foot.footLenMm / 10).toFixed(1)} cm (measurement mode - less reliable than a reference boot)`);
+  }
+  const tendency = t.lengthOffsetMm >= 3 ? 'runs noticeably short' : t.lengthOffsetMm >= 1 ? 'runs slightly short' :
+                   t.lengthOffsetMm <= -3 ? 'runs noticeably long' : t.lengthOffsetMm <= -1 ? 'runs slightly long' : 'runs true to size';
+  out.push(`${t.model} ${tendency} (reviewer consensus)`);
+  out.push(`US ${rec.us} gives ~${Math.round(rec.allowance)} mm toe room${rec.pref === 'tight' ? ' - your tight match-fit preference' : ''}`);
+  out.push(`Width: ${rec.widthVerdict.replace(/^width /, '')}`);
+  return out;
+}
+
+function suggestAlternatives(foot, avoid) {
+  return BOOTS
+    .filter(b => b.id !== avoid.id && Math.abs(b.width - foot.footWidth) < 0.7)
+    .sort((a, b) => Math.abs(a.width - foot.footWidth) - Math.abs(b.width - foot.footWidth))
+    .slice(0, 3);
+}
+
+/** Plain-language explanation */
+function explain(foot, refs, rec) {
+  const t = rec.target;
+  const parts = [];
+  if (refs && refs.length) {
+    const r0 = refs[0];
+    const rb = BOOTS.find(b => b.id === r0.bootId);
+    const tendency = t.lengthOffsetMm >= 3 ? 'runs noticeably short' : t.lengthOffsetMm >= 1 ? 'runs slightly short' :
+                     t.lengthOffsetMm <= -3 ? 'runs noticeably long' : t.lengthOffsetMm <= -1 ? 'runs slightly long' : 'runs true to size';
+    parts.push(`Based on your ${rb.model} in US ${r0.us} (${LENGTH_FIT[r0.lengthFit].label.toLowerCase()} length, ${WIDTH_FIT[r0.widthFit].label.toLowerCase()} width), we estimate your foot at about ${(foot.footLenMm / 10).toFixed(1)} cm.`);
+    parts.push(`Reviewer consensus is that the ${t.model} ${tendency}.`);
+  } else {
+    parts.push(`Based on your measured foot length of ${(foot.footLenMm / 10).toFixed(1)} cm. Measurement-based picks are less reliable than reference-boot picks - treat this as a starting point.`);
+  }
+  parts.push(`US ${rec.us} gives you roughly ${Math.round(rec.allowance)} mm of toe room${rec.pref === 'tight' ? ' (tight match-fit preference)' : ''}, and the ${t.model.split(' ')[0]} ${rec.widthVerdict}.`);
+  return parts.join(' ');
+}
+
+// Exports (works in browser and node)
+const BootFit = { BOOTS, BRAND_CHARTS, LENGTH_FIT, WIDTH_FIT, SNEAKERS, usToCm, usToUk, usToEu, internalLengthMm, estimateFoot, inferPref, footFromMeasurement, footFromProfile, profileSummary, WIDTH_BAND, recommend, suggestAlternatives, explain, whyBullets };
+if (typeof module !== 'undefined') module.exports = BootFit;
+if (typeof window !== 'undefined') window.BootFit = BootFit;
+
+</script>
+<script>
+/* ============ BootFit UI ============ */
+const S = {
+  mode: 'ref',
+  refs: [],                 // committed reference boots
+  cur: { bootId: null, us: null, lengthFit: null, widthFit: null }, // in-progress ref
+  refBrand: null, targetBrand: null,
+  profile: { lenMm: null, widMm: null, sneakerId: null, sneakerUs: null, sneakerFit: null, feel: null, exp: {} },
+  profileFoot: null,
+  pref: 'standard',
+  targetId: null,
+  cmpIds: [],
+  foot: null,
+  history: [],
+  reports: [],
+};
+
+const $ = id => document.getElementById(id);
+const BRANDS = [...new Set(BootFit.BOOTS.map(b => b.brand))];
+const widthTag = w => w <= 2 ? ['narrow', 'Narrow'] : w >= 4 ? ['wide', 'Wide'] : ['med', 'Medium'];
+
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+/* ---------- tabs ---------- */
+function showTab(t) {
+  const isHome = t === 'home';
+  document.getElementById('tab-home').classList.toggle('hidden', !isHome);
+  document.querySelector('.appwrap').classList.toggle('hidden', isHome);
+  if (!isHome) ['finder', 'compare', 'profile', 'data'].forEach(x => {
+    $('tab-' + x).classList.toggle('hidden', x !== t);
+  });
+  document.querySelectorAll('nav a[data-tab]').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
+  if (t === 'profile') renderProfile();
+  if (t === 'compare') renderCompareSetup();
+  window.scrollTo({ top: 0 });
+}
+
+/* ---------- mode ---------- */
+function setMode(m) {
+  S.mode = m;
+  $('mode-ref').classList.toggle('sel', m === 'ref');
+  $('mode-measure').classList.toggle('sel', m === 'measure');
+  $('ref-flow').classList.toggle('hidden', m !== 'ref');
+  $('measure-flow').classList.toggle('hidden', m !== 'measure');
+  updateFlow();
+}
+function setPref(p) {
+  S.pref = p;
+  S.prefTouched = true;
+  $('pref-standard').classList.toggle('sel', p === 'standard');
+  $('pref-tight').classList.toggle('sel', p === 'tight');
+}
+
+/* ---------- boot pickers ---------- */
+function bootCard(b, sel, onclick) {
+  const [wc, wl] = widthTag(b.width);
+  return `<button class="boot-card ${sel ? 'sel' : ''}" onclick="${onclick}">
+    <div class="bname">${esc(b.model)}</div>
+    <div class="bmeta">
+      <span class="tag ${b.category}">${b.category}</span>
+      <span class="tag ${wc}">${wl}</span>
+      <span class="tag">${esc(b.gen)}</span>
+    </div>
+  </button>`;
+}
+function renderBrandChips(elId, selected, fn) {
+  $(elId).innerHTML = BRANDS.map(br =>
+    `<button class="chip ${selected === br ? 'sel' : ''}" onclick="${fn}('${br}')">${br}</button>`).join('');
+}
+function pickRefBrand(br) {
+  S.refBrand = br;
+  renderBrandChips('ref-brands', br, 'pickRefBrand');
+  $('ref-boots').innerHTML = BootFit.BOOTS.filter(b => b.brand === br)
+    .map(b => bootCard(b, S.cur.bootId === b.id, `pickRefBoot('${b.id}')`)).join('');
+}
+function pickRefBoot(id) {
+  S.cur.bootId = id;
+  pickRefBrand(S.refBrand);
+  updateFlow();
+}
+function pickTargetBrand(br) {
+  S.targetBrand = br;
+  renderBrandChips('target-brands', br, 'pickTargetBrand');
+  $('target-boots').innerHTML = BootFit.BOOTS.filter(b => b.brand === br)
+    .map(b => bootCard(b, S.targetId === b.id, `pickTarget('${b.id}')`)).join('');
+}
+function pickTarget(id) {
+  S.targetId = id;
+  pickTargetBrand(S.targetBrand);
+  updateFlow();
+}
+
+/* ---------- size + fit selectors ---------- */
+function renderSizes() {
+  let html = '<option value="">Select size…</option>';
+  for (let s = 6; s <= 14; s += 0.5) html += `<option value="${s}">US ${s}</option>`;
+  $('ref-size').innerHTML = html;
+  $('ref-size').onchange = () => {
+    S.cur.us = parseFloat($('ref-size').value) || null;
+    echoSize();
+    updateFlow();
+  };
+}
+function echoSize() {
+  const b = BootFit.BOOTS.find(x => x.id === S.cur.bootId);
+  if (!b || !S.cur.us) { $('ref-size-echo').textContent = ''; return; }
+  $('ref-size-echo').textContent =
+    `${b.brand} US ${S.cur.us} ≈ UK ${BootFit.usToUk(b.brand, S.cur.us)} · EU ${BootFit.usToEu(b.brand, S.cur.us)} · ${BootFit.usToCm(b.brand, S.cur.us).toFixed(1)} cm`;
+}
+function segButtons(elId, dict, cur, fn, subs) {
+  $(elId).innerHTML = Object.entries(dict).map(([k, v]) =>
+    `<button class="${cur === k ? 'sel' : ''}" onclick="${fn}('${k}')">${v.label}<small>${subs[k] || ''}</small></button>`).join('');
+}
+const LEN_SUBS = {
+  touching: 'toes press the front', snug: 'contact, no pressure', ideal: 'a thumb of space',
+  roomy: 'noticeable free space', long: 'foot slides forward',
+};
+const WID_SUBS = {
+  painful: 'pinches or numbs', snug: 'firm hold, no pain', ideal: 'wrapped, comfortable',
+  roomy: 'slight side space', wide: 'foot moves sideways',
+};
+function pickLen(k) { S.cur.lengthFit = k; renderFitSegs(); updateFlow(); }
+function pickWid(k) { S.cur.widthFit = k; renderFitSegs(); updateFlow(); }
+const HEEL_OPTS = [['slips', 'Slips'], ['secure', 'Secure'], ['tight', 'Extremely tight']];
+function pickHeel(k) { S.cur.heelFit = S.cur.heelFit === k ? null : k; renderFitSegs(); updateFlow(); }
+function renderFitSegs() {
+  segButtons('len-seg', BootFit.LENGTH_FIT, S.cur.lengthFit, 'pickLen', LEN_SUBS);
+  segButtons('wid-seg', BootFit.WIDTH_FIT, S.cur.widthFit, 'pickWid', WID_SUBS);
+  $('heel-chips').innerHTML = HEEL_OPTS.map(([v, l]) =>
+    `<button class="chip ${S.cur.heelFit === v ? 'sel' : ''}" onclick="pickHeel('${v}')">${l}</button>`).join('');
+}
+
+/* ---------- Foot Profile mode (Engine B) ---------- */
+const FEEL_OPTS = { tight: { label: 'Race fit' }, standard: { label: 'Balanced' }, comfort: { label: 'Comfort fit' } };
+const FEEL_SUBS = { tight: 'very snug, zero excess', standard: 'snug but forgiving', comfort: 'room to breathe' };
+const EXP_QS = [
+  ['pinky',  'pf-exp-pinky',  [['always', 'Always'], ['sometimes', 'Sometimes'], ['never', 'Never']]],
+  ['heel',   'pf-exp-heel',   [['often', 'Often'], ['sometimes', 'Sometimes'], ['never', 'Never']]],
+  ['narrow', 'pf-exp-narrow', [['yes', 'Yes'], ['no', 'No']]],
+];
+function toMm(v, unit) { return unit === 'mm' ? v : unit === 'cm' ? v * 10 : v * 25.4; }
+function pfInput() {
+  const lv = parseFloat($('pf-len').value), lu = $('pf-len-unit').value;
+  const wv = parseFloat($('pf-wid').value), wu = $('pf-wid-unit').value;
+  const lenMm = lv ? toMm(lv, lu) : null;
+  const widMm = wv ? toMm(wv, wu) : null;
+  S.profile.lenMm = lenMm >= 200 && lenMm <= 330 ? lenMm : null;
+  S.profile.widMm = widMm >= 70 && widMm <= 140 ? widMm : null;
+  $('pf-len-echo').textContent = S.profile.lenMm ? `${(S.profile.lenMm / 10).toFixed(1)} cm` : (lenMm ? 'Expected between 20 and 33 cm - check your units' : '');
+  $('pf-wid-echo').textContent = S.profile.widMm ? `${(S.profile.widMm / 10).toFixed(1)} cm` : (widMm ? 'Expected between 7 and 14 cm - check your units' : '');
+  S.profile.sneakerUs = parseFloat($('pf-sneaker-size').value) || null;
+  S.profileFoot = null; $('pf-profile-card').innerHTML = '';
+  updateFlow();
+}
+function pickSneaker(id) {
+  S.profile.sneakerId = id;
+  $('pf-sneakers').innerHTML = BootFit.SNEAKERS.map(s =>
+    `<button class="chip ${S.profile.sneakerId === s.id ? 'sel' : ''}" onclick="pickSneaker('${s.id}')">${s.name}</button>`).join('');
+  $('pf-sneaker-detail').classList.toggle('hidden', id === 'none' || !id);
+  S.profileFoot = null; $('pf-profile-card').innerHTML = '';
+  updateFlow();
+}
+function pickSneakerFit(k) {
+  S.profile.sneakerFit = k;
+  $('pf-sneaker-fit').innerHTML = [['snug', 'Snug'], ['ideal', 'Just right'], ['roomy', 'Roomy']].map(([v, l]) =>
+    `<button class="chip ${S.profile.sneakerFit === v ? 'sel' : ''}" onclick="pickSneakerFit('${v}')">${l}</button>`).join('');
+  S.profileFoot = null; $('pf-profile-card').innerHTML = '';
+  updateFlow();
+}
+function pickFeel(k) {
+  S.profile.feel = k;
+  segButtons('pf-feel', FEEL_OPTS, k, 'pickFeel', FEEL_SUBS);
+  S.profileFoot = null; $('pf-profile-card').innerHTML = '';
+  updateFlow();
+}
+function pickExp(q, v) {
+  S.profile.exp[q] = v;
+  renderExpQs();
+  S.profileFoot = null; $('pf-profile-card').innerHTML = '';
+  updateFlow();
+}
+function renderExpQs() {
+  EXP_QS.forEach(([q, el, opts]) => {
+    $(el).innerHTML = opts.map(([v, l]) =>
+      `<button class="chip ${S.profile.exp[q] === v ? 'sel' : ''}" onclick="pickExp('${q}','${v}')">${l}</button>`).join('');
+  });
+}
+function profileInputsDone() {
+  const p = S.profile;
+  const sneakerOk = !p.sneakerId || p.sneakerId === 'none' || (p.sneakerUs && p.sneakerFit);
+  return p.lenMm && p.widMm && p.feel && p.exp.pinky && p.exp.heel && p.exp.narrow && sneakerOk;
+}
+function buildProfile() {
+  const p = S.profile;
+  S.profileFoot = BootFit.footFromProfile({
+    lenMm: p.lenMm, widthMm: p.widMm,
+    sneakerId: p.sneakerId, sneakerUs: p.sneakerUs, sneakerFit: p.sneakerFit,
+    exp: { pinky: p.exp.pinky, heel: p.exp.heel, returnedNarrow: p.exp.narrow },
+  });
+  const sum = BootFit.profileSummary(S.profileFoot, p.feel);
+  $('pf-profile-card').innerHTML = `<div class="pcard fade-in">
+    <div class="pcard-head"><span class="kicker">Your foot profile</span></div>
+    <div class="pcard-body">
+      <div class="pstat"><span class="k">Length</span><span class="v">${sum.lengthCm} cm</span></div>
+      <div class="pstat"><span class="k">Forefoot</span><span class="v">${sum.band}</span></div>
+      <div class="pstat"><span class="k">Preferred fit</span><span class="v">${esc(sum.prefLabel)}</span></div>
+      <div class="pstat"><span class="k">Likely boot type</span><span class="v small">${esc(sum.likely)}</span></div>
+      ${sum.heelNote ? `<p class="note" style="margin-top:8px">${esc(sum.heelNote)}</p>` : ''}
+      <span class="engine-badge">Engine B · foot profile · <span class="stars"><b>★★★</b>☆☆</span></span>
+    </div>
+  </div>`;
+  updateFlow();
+  $('pf-profile-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+/* ---------- multi-reference ---------- */
+function curRefComplete() {
+  return S.cur.bootId && S.cur.us && S.cur.lengthFit && S.cur.widthFit;
+}
+function stashRefAndAddAnother() {
+  if (!curRefComplete()) return;
+  S.refs.push({ ...S.cur });
+  S.cur = { bootId: null, us: null, lengthFit: null, widthFit: null, heelFit: null };
+  S.refBrand = null;
+  renderBrandChips('ref-brands', null, 'pickRefBrand');
+  $('ref-boots').innerHTML = '';
+  $('ref-size').value = '';
+  $('ref-size-echo').textContent = '';
+  renderFitSegs();
+  renderRefList();
+  updateFlow();
+  $('step-refboot').scrollIntoView({ behavior: 'smooth' });
+}
+function removeRef(i) { S.refs.splice(i, 1); renderRefList(); updateFlow(); }
+function renderRefList() {
+  $('ref-list').innerHTML = S.refs.map((r, i) => {
+    const b = BootFit.BOOTS.find(x => x.id === r.bootId);
+    return `<div class="ref-pill"><span><b>${esc(b.model)}</b> · US ${r.us} · ${BootFit.LENGTH_FIT[r.lengthFit].label.toLowerCase()} / ${BootFit.WIDTH_FIT[r.widthFit].label.toLowerCase()}</span>
+      <button class="x" onclick="removeRef(${i})" title="Remove">✕</button></div>`;
+  }).join('');
+}
+
+/* ---------- flow gating ---------- */
+function allRefs() {
+  const refs = [...S.refs];
+  if (curRefComplete()) refs.push({ ...S.cur });
+  return refs;
+}
+function inputsReady() {
+  if (S.mode === 'ref') return allRefs().length > 0;
+  return !!S.profileFoot;
+}
+function updateFlow() {
+  const ready = inputsReady();
+  if (S.mode === 'ref') {
+    $('step-refsize').classList.toggle('hidden', !S.cur.bootId);
+    $('step-lenfit').classList.toggle('hidden', !(S.cur.bootId && S.cur.us));
+    $('step-widfit').classList.toggle('hidden', !(S.cur.bootId && S.cur.us && S.cur.lengthFit));
+    $('step-heelfit').classList.toggle('hidden', !curRefComplete());
+    $('step-morerefs').classList.toggle('hidden', !(curRefComplete() || S.refs.length) || S.refs.length + (curRefComplete() ? 1 : 0) >= 3);
+    $('pref-num').textContent = '6'; $('target-num').textContent = '7';
+    $('step-pref').classList.toggle('hidden', !ready);
+  } else {
+    // Engine B: preference comes from the "boot feel" step, hide the ref-mode pref step
+    $('step-pref').classList.add('hidden');
+    $('target-num').textContent = '7';
+    $('pf-build-btn').classList.toggle('hidden', !profileInputsDone() || !!S.profileFoot);
+  }
+  $('step-target').classList.toggle('hidden', !ready);
+  $('go-btn').classList.toggle('hidden', !(ready && S.targetId));
+}
+
+/* ---------- recommendation ---------- */
+function computeFoot() {
+  return S.mode === 'ref' ? BootFit.estimateFoot(allRefs()) : S.profileFoot;
+}
+function effectivePref() {
+  if (S.mode === 'measure') return S.profile.feel || 'standard';
+  // if the user never touched the pref toggle, infer it from how they buy boots
+  return S.prefTouched ? S.pref : BootFit.inferPref(allRefs());
+}
+function runRecommendation() {
+  S.foot = computeFoot();
+  const rec = BootFit.recommend(S.foot, S.targetId, effectivePref());
+  const refs = S.mode === 'ref' ? allRefs() : null;
+  S.history.push({ when: new Date(), rec, refs });
+  $('result-area').innerHTML = renderResult(rec, refs);
+  $('result-area').scrollIntoView({ behavior: 'smooth' });
+  renderCompareSetup();
+}
+function renderResult(rec, refs) {
+  const t = rec.target;
+  const bullets = BootFit.whyBullets(S.foot, refs, rec);
+  const softWarn = rec.warnings.filter(w => !/wider model|narrower model/i.test(w));
+  const hardMismatch = rec.widthSeverity === 2;
+  const alts = hardMismatch ? BootFit.suggestAlternatives(S.foot, t) : [];
+  // community reports actually logged this session for this boot
+  const community = S.reports.filter(r => r.model === t.model);
+
+  const engineA = !S.foot.profile;
+  const tierWidth = { High: 85, Moderate: 58, Low: 32 }[rec.confidence];
+  const toneDot = { green: 'var(--accent)', amber: 'var(--amber)', red: 'var(--red)' };
+
+  return `<div class="result fade-in">
+    <div class="result-hero">
+      <div class="kicker">${esc(t.model)} · our prediction</div>
+      <div class="big-size"><span>US ${rec.us}</span></div>
+      <div class="size-alts">UK ${rec.uk} · EU ${rec.eu} · ${rec.cm.toFixed(1)} cm</div>
+      <div class="conf ${rec.confidence}"><span class="dot"></span>${rec.confidence} confidence</div>
+      <div class="conf-meter">
+        <div class="conf-track"><div class="conf-fill ${rec.confidence}" style="width:${tierWidth}%"></div></div>
+        <div class="conf-pct">A tier, not a percentage - it reflects how much evidence exists, never certainty.
+          <button class="linklike" onclick="document.getElementById('conf-how').classList.toggle('hidden')">How confidence works</button></div>
+      </div>
+      <div id="conf-how" class="hidden altbox" style="margin-top:10px">
+        Confidence depends on: how well this exact model's fit is documented, the quality of your reference
+        (boots you own beat measurements), agreement between your references, and - as they accumulate -
+        community fit reports. It does <b>not</b> mean we're certain. High = strong evidence; Low = treat as a starting point.
+      </div>
+      <span class="engine-badge">${engineA ? 'Engine A · reference boot · <span class="stars"><b>★★★★★</b></span>' : 'Engine B · foot profile · <span class="stars"><b>★★★</b>☆☆</span>'}</span>
+    </div>
+    <div class="result-body">
+      ${rec.conservative ? `<div class="conservative" style="margin:0 0 16px"><b>We're not confident enough for a strong call.</b> ${esc(rec.conservative)}</div>` : ''}
+      <h3>Our reasoning - prediction, not fact</h3>
+      <ul class="bullets">${bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>
+
+      ${hardMismatch ? `<div class="mismatch"><b>Fit compatibility warning:</b> this boot ${esc(rec.widthVerdict)}.
+        Changing size will not fix boot shape. ${alts.length ? 'Closer matches for your foot: <b>' + alts.map(b => esc(b.model)).join('</b>, <b>') + '</b>.' : ''}</div>` : ''}
+
+      <h3>How sure are we?</h3>
+      ${rec.ladder.map(l => `<div class="fitrow"><span class="k" style="display:flex;align-items:center;gap:8px">
+        <span style="width:9px;height:9px;border-radius:50%;background:${toneDot[l.tone]};flex:none"></span><b style="color:var(--text)">US ${l.us}</b></span>
+        <span class="v" style="font-weight:500;color:var(--muted)">${esc(l.note)}</span></div>`).join('')}
+
+      <h3>The facts - objective, not ours</h3>
+      ${rec.facts.map(([k, v]) => `<div class="fitrow"><span class="k">${esc(k)}</span><span class="v">${esc(v)}</span></div>`).join('')}
+      <p class="srcs" style="margin-top:8px">${t.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</p>
+
+      <h3>Evidence behind the confidence tier</h3>
+      <ul class="ev">${rec.evidence.map(e => `<li class="${/0 community/.test(e) && !community.length ? 'pending' : ''}">${esc(community.length && /community/.test(e) ? community.length + ' fit report' + (community.length > 1 ? 's' : '') + ' logged this session' : e)}</li>`).join('')}</ul>
+
+      <h3>Expected fit</h3>
+      <div class="fitrow"><span class="k">Length</span><span class="v">${esc(rec.expected.length)} (~${Math.round(rec.allowance)} mm toe room)</span></div>
+      <div class="fitrow"><span class="k">Forefoot</span><span class="v">${esc(rec.expected.forefoot)}</span></div>
+      <div class="fitrow"><span class="k">Heel</span><span class="v">${esc(rec.expected.heel)}</span></div>
+
+      ${softWarn.length ? `<h3>Watch out for</h3>${softWarn.map(w => `<div class="warn${/laceless|heel slip/i.test(w) ? ' hard' : ''}">${esc(w)}</div>`).join('')}` : ''}
+
+      <div class="tradeoff">
+        <h4>Why not <b>US ${rec.tradeoff.us}</b>?</h4>
+        <div class="tcols">
+          <div class="pro"><div class="th">Pros</div>${rec.tradeoff.pros.map(p => `<p>${esc(p)}</p>`).join('')}</div>
+          <div class="con"><div class="th">Cons</div>${rec.tradeoff.cons.map(c => `<p>${esc(c)}</p>`).join('')}</div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px"><button class="btn ghost" onclick="openReport('${t.id}', ${rec.us})">I bought these</button></div>
+    </div>
+  </div>`;
+}
+
+/* ---------- fit reports: one tap, then optional issues ---------- */
+const REP_FITS = [
+  ['😍', 'Perfect'], ['📏', 'Too small'], ['📦', 'Too big'],
+];
+const REP_ISSUES = ['Heel slipped', 'Toe pressure', 'Lace bite', 'Blisters', 'Too narrow', 'No issues'];
+function openReport(bootId, us) {
+  const b = BootFit.BOOTS.find(x => x.id === bootId);
+  document.querySelectorAll('#report-form').forEach(e => e.remove());
+  $('result-area').insertAdjacentHTML('beforeend', `
+  <div class="step fade-in" id="report-form">
+    <h2>Did our recommendation help? <span style="color:var(--faint);font-size:13px;font-weight:500">- ${esc(b.model)} US ${us}</span></h2>
+    <p class="hint">One tap. Five seconds. This is the data that makes BootFit smarter.</p>
+    <div class="tapgrid">${REP_FITS.map(([e, l]) => `<button class="tap" onclick="repFit('${bootId}', ${us}, '${l}', this)"><span class="emo">${e}</span>${l}</button>`).join('')}</div>
+    <div id="rep-step2" class="hidden" style="margin-top:16px">
+      <h2 style="font-size:15px">Anything else?</h2>
+      <div class="chips" style="margin-top:10px">${REP_ISSUES.map(i => `<button class="chip" onclick="repIssue('${i}', this)">${i}</button>`).join('')}</div>
+      <div style="margin-top:14px"><button class="btn" onclick="finishReport()">Done</button></div>
+    </div>
+  </div>`);
+  S._rep = { bootId, us, issues: [] };
+  $('report-form').scrollIntoView({ behavior: 'smooth' });
+}
+function repFit(bootId, us, fit, el) {
+  S._rep.fit = fit;
+  el.parentElement.querySelectorAll('.tap').forEach(t => t.classList.remove('sel'));
+  el.classList.add('sel');
+  $('rep-step2').classList.remove('hidden');
+}
+function repIssue(issue, el) {
+  if (issue === 'No issues') { S._rep.issues = ['No issues']; finishReport(); return; }
+  el.classList.toggle('sel');
+  S._rep.issues = S._rep.issues.includes(issue) ? S._rep.issues.filter(i => i !== issue) : [...S._rep.issues.filter(i => i !== 'No issues'), issue];
+}
+function finishReport() {
+  const b = BootFit.BOOTS.find(x => x.id === S._rep.bootId);
+  S.reports.push({ when: new Date(), model: b.model, us: S._rep.us, fit: S._rep.fit || '-', issues: S._rep.issues.length ? S._rep.issues : ['-'] });
+  $('report-form').outerHTML = `<div class="step fade-in"><h2>✓ Saved - thanks</h2>
+    <p class="hint" style="margin:0">In the production app this becomes anonymous, weighted evidence for the next player making the same switch.</p></div>`;
+  renderData();
+}
+
+/* ---------- compare ---------- */
+function renderCompareSetup() {
+  const ready = inputsReady();
+  $('cmp-hint').textContent = ready
+    ? 'Pick up to 3 boots to compare against your foot profile.'
+    : 'Set up your reference boot in the Size Finder first - then pick targets here.';
+  $('cmp-boots').innerHTML = BootFit.BOOTS.map(b => bootCard(b, S.cmpIds.includes(b.id), `toggleCmp('${b.id}')`)).join('');
+  $('cmp-btn').disabled = !(ready && S.cmpIds.length >= 2);
+}
+function toggleCmp(id) {
+  if (S.cmpIds.includes(id)) S.cmpIds = S.cmpIds.filter(x => x !== id);
+  else if (S.cmpIds.length < 3) S.cmpIds.push(id);
+  renderCompareSetup();
+}
+function runCompare() {
+  const foot = computeFoot();
+  const recs = S.cmpIds.map(id => BootFit.recommend(foot, id, S.pref));
+  const row = (label, fn) => `<tr><td>${label}</td>${recs.map(fn).join('')}</tr>`;
+  $('cmp-result').innerHTML = `<div class="cmp-scroll fade-in"><table>
+    <tr><th></th>${recs.map(r => `<th>${esc(r.target.model)}</th>`).join('')}</tr>
+    ${row('Recommended size', r => `<td><b class="sz">US ${r.us}</b></td>`)}
+    ${row('Toe room', r => `<td>~${Math.round(r.allowance)} mm</td>`)}
+    ${row('Width match', r => `<td>${r.widthSeverity === 0 ? 'Good' : r.widthSeverity === 1 ? 'Caution' : 'Mismatch'}</td>`)}
+    ${row('Confidence', r => `<td>${r.confidence}</td>`)}
+    ${row('Break-in', r => `<td>${esc(r.target.breakIn)}</td>`)}
+    ${row('Verdict', r => `<td>${r.widthSeverity === 2 ? 'Consider another model' : r.confidence === 'High' ? 'Safe pick' : 'Reasonable pick'}</td>`)}
+  </table></div>`;
+}
+
+/* ---------- profile ---------- */
+function renderProfile() {
+  if (S.foot) {
+    const w = S.foot.footWidth;
+    const band = w < 2.4 ? 'Narrow' : w < 3.4 ? 'Medium' : w < 4.2 ? 'Medium-wide' : 'Wide';
+    const stars = S.foot.profile ? '<span class="stars"><b>★★★</b>☆☆</span>'
+      : S.foot.refCount >= 2 ? '<span class="stars"><b>★★★★★</b></span>' : '<span class="stars"><b>★★★★</b>☆</span>';
+    $('profile-body').innerHTML = `
+      <div class="profile-stat"><span class="k">Estimated foot length</span><span class="v">${(S.foot.footLenMm / 10).toFixed(1)} cm</span></div>
+      <div class="profile-stat"><span class="k">Width band</span><span class="v">${band}</span></div>
+      <div class="profile-stat"><span class="k">Preferred fit</span><span class="v">${effectivePref() === 'tight' ? 'Race fit' : effectivePref() === 'comfort' ? 'Comfort fit' : 'Balanced'}${S.mode === 'ref' && !S.prefTouched ? ' (inferred from your boots)' : ''}</span></div>
+      <div class="profile-stat"><span class="k">Generated from</span><span class="v">${S.foot.profile ? 'Foot measurements + experience' : S.foot.refCount + ' reference boot' + (S.foot.refCount > 1 ? 's' : '')}</span></div>
+      <div class="profile-stat"><span class="k">Profile confidence</span><span class="v">${stars}</span></div>
+      ${S.foot.lenSpread > 6 ? '<p class="note">Your reference boots disagree on length by more than half a size - recommendations are labeled more cautiously because of it.</p>' : ''}
+      ${S.foot.profile ? '<p class="note">Add a boot you own in the Size Finder and your profile upgrades to the more accurate reference engine.</p>' : ''}`;
+  }
+  if (S.history.length) {
+    $('history-body').innerHTML = S.history.slice().reverse().map(h =>
+      `<div class="profile-stat"><span class="k">${esc(h.rec.target.model)}</span><span class="v">US ${h.rec.us} · ${h.rec.confidence}</span></div>`).join('');
+  }
+  if (S.reports.length) {
+    $('reports-body').innerHTML = S.reports.slice().reverse().map(r =>
+      `<div class="profile-stat"><span class="k">${esc(r.model)} US ${r.us}</span><span class="v">${esc(r.fit)} · ${esc(r.issues.join(', '))}</span></div>`).join('');
+  }
+}
+
+/* ---------- data tab ---------- */
+function renderData() {
+  const wName = w => w <= 2 ? 'Narrow' : w <= 2.6 ? 'Narrow-medium' : w <= 3.4 ? 'Medium' : w <= 4.2 ? 'Medium-wide' : 'Wide';
+  const lName = mm => mm >= 3 ? 'Runs short' : mm >= 1 ? 'Slightly short' : mm <= -3 ? 'Runs long' : mm <= -1 ? 'Slightly long' : 'True to size';
+  $('data-list').innerHTML = BootFit.BOOTS.map(b => `
+    <div class="databoot">
+      <div class="bname">${esc(b.model)} <span class="tag" style="margin-left:6px">${esc(b.gen)}</span>
+        <span class="tag ${b.dataConfidence === 'high' ? 'touch' : b.dataConfidence === 'low' ? 'narrow' : 'control'}">${b.dataConfidence} data confidence</span></div>
+      <div class="traits">
+        <b>Length:</b> ${lName(b.lengthOffsetMm)} · <b>Width:</b> ${wName(b.width)} · <b>Upper:</b> ${esc(b.material)} · <b>Break-in:</b> ${esc(b.breakIn)}
+      </div>
+      ${b.quirks.map(q => `<div class="warn">${esc(q)}</div>`).join('')}
+      ${communityBlock(b)}
+      <p class="srcs" style="margin-top:8px">Sources: ${b.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</p>
+    </div>`).join('');
+}
+function communityBlock(b) {
+  const reps = S.reports.filter(r => r.model === b.model);
+  if (!reps.length) {
+    return `<p class="note" style="margin:8px 0 0">Community: no fit reports yet - figures above are reviewer consensus. Be the first to log one.</p>`;
+  }
+  const tally = {};
+  reps.forEach(r => { tally[r.fit] = (tally[r.fit] || 0) + 1; });
+  const parts = Object.entries(tally).map(([k, v]) => `${v}× ${k}`).join(' · ');
+  return `<p class="note" style="margin:8px 0 0;color:var(--accent)">Community (this session): ${reps.length} report${reps.length > 1 ? 's' : ''} - ${esc(parts)}</p>`;
+}
+
+/* ---------- init ---------- */
+renderBrandChips('ref-brands', null, 'pickRefBrand');
+renderBrandChips('target-brands', null, 'pickTargetBrand');
+renderSizes();
+renderFitSegs();
+// Foot Profile controls
+$('pf-sneakers').innerHTML = BootFit.SNEAKERS.map(s =>
+  `<button class="chip" onclick="pickSneaker('${s.id}')">${s.name}</button>`).join('');
+(function () {
+  let html = '<option value="">Sneaker size (US)…</option>';
+  for (let s = 6; s <= 14; s += 0.5) html += `<option value="${s}">US ${s}</option>`;
+  $('pf-sneaker-size').innerHTML = html;
+  $('pf-sneaker-size').onchange = pfInput;
+})();
+pickSneakerFit(null);
+segButtons('pf-feel', FEEL_OPTS, null, 'pickFeel', FEEL_SUBS);
+renderExpQs();
+renderData();
+renderCompareSetup();
+// deep links from the landing page: index.html#compare / #profile / #data / #finder
+(function () {
+  const h = (location.hash || '').replace('#', '');
+  showTab(['finder', 'compare', 'profile', 'data', 'home'].includes(h) ? h : 'home');
+})();
+
+</script>
+<script>
+
+(function () {
+  const $ = id => document.getElementById(id);
+  const DEFAULT_CUR = 'nike-mercurial-vapor-16-elite';
+  const DEFAULT_TGT = 'puma-future-8-ultimate';
+
+  function fill(sel, boots, chosen) {
+    sel.innerHTML = boots.map(b => `<option value="${b.id}" ${b.id === chosen ? 'selected' : ''}>${b.model}</option>`).join('');
+  }
+  fill($('d-cur'), BootFit.BOOTS, DEFAULT_CUR);
+  fill($('d-tgt'), BootFit.BOOTS, DEFAULT_TGT);
+  let html = '';
+  for (let s = 6; s <= 14; s += 0.5) html += `<option value="${s}" ${s === 10 ? 'selected' : ''}>US ${s}</option>`;
+  $('d-size').innerHTML = html;
+
+  function run() {
+    const cur = $('d-cur').value, tgt = $('d-tgt').value, us = parseFloat($('d-size').value);
+    const refs = [{ bootId: cur, us, lengthFit: 'ideal', widthFit: 'ideal' }];
+    const foot = BootFit.estimateFoot(refs);
+    const rec = BootFit.recommend(foot, tgt, 'standard');
+    $('show-rec').textContent = 'US ' + rec.us;
+    $('d-conf').className = 'demo-conf ' + rec.confidence;
+    $('show-conf').textContent = rec.confidence + ' confidence';
+    $('show-why').innerHTML = BootFit.whyBullets(foot, refs, rec).slice(1)
+      .map(b => `<div class="li"><b>&#10003;</b>${b}</div>`).join('');
+  }
+  $('d-cur').onchange = run; $('d-tgt').onchange = run; $('d-size').onchange = run;
+  run();
+})();
+
+</script>
+</body>
+</html>
